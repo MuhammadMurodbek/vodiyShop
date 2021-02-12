@@ -1,12 +1,10 @@
 import React,{useContext, useState, useEffect} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import SearchIcon from '@material-ui/icons/Search';
-import Data from './Data.json'
 import {StoreContext} from '../Store/StoreG'
 function Main() {
-    const {checkItem} = useContext(StoreContext)
-    // const products = Data.products.filter(item=>item.category===checkItem)
-    
+    const {dataChecked} = useContext(StoreContext)
+    // console.log(dataChecked)
     return (
         <div className="main">
             <span className="search">
@@ -16,7 +14,7 @@ function Main() {
             <div className="main-items">
                 <ul>
                     {
-                        checkItem.map((product)=>(
+                        dataChecked.map((product)=>(
                             <li key={product._id}>
                                 <div className="main-items-box">
                                     <span className="main-items-box-img">

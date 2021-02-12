@@ -1,9 +1,12 @@
-import React,{useState,useContext} from 'react'
-import {NavLink} from 'react-router-dom'
+import React,{useState,useEffect,useContext} from 'react'
+import {NavLink, Route,Switch} from 'react-router-dom'
 import Data from './Data.json'
 import {StoreContext} from '../Store/StoreG' 
+import Main from './Main'
 const Category = () => {
     
+    // const [selectItem, setSelectItem] = useState('')
+   
     const {checkCategory} = useContext(StoreContext)
 
     let products=Data.products
@@ -37,8 +40,10 @@ const Category = () => {
                     ))
                 }
             </ul>
+            
         </div>
     )
+    
 }
 
 export default Category
