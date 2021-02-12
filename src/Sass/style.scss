@@ -23,6 +23,12 @@
     color:#426696;
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
+.progLine{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
 body{
     box-sizing: border-box;
     width: 100vw;
@@ -378,7 +384,8 @@ ul{
 }
 
 
-//CATEGORY
+//CATEGORY  **************************
+ 
 .category{
     width: 100%;
     height: auto;
@@ -410,11 +417,48 @@ ul{
         background:linear-gradient( to left top, rgba(255,255,255,0.9), rgba(255,255,255,0.1));
         border-radius: 20px;
     }
+    &-items{
+        @include glass;
+        @include d-sa;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: 30px auto 0;
+        h4,h5{
+            margin: 20px 10px;
+            padding: 0;
+            font-weight: 500;
+            i{
+                color: rgb(23, 212, 245);
+                font-size:1.3rem;
+                margin-right: 5px;
+            }
+        }
+        &-sort{
+            width: 200px;
+            height: auto;
+            @include d-ss;
+
+            select{
+                @include glass;
+                padding: 4px 15px;
+                border-radius:15px;
+                border:none;
+                outline:none;
+                font-size: 16px;
+                font-family: 'Poppins', sans-serif;
+                transition: all ease 0.4s;
+                &:active{
+                    background-color: #1979f7;
+                }
+            }
+        }
+            
+    }
     &-wrapper{
         @include glass;
         @include d-ss;
         width: 95%;
-        margin: 30px auto;
+        margin: 10px auto 30px;
         flex-wrap: wrap;
         box-sizing:border-box;
         padding: 20px 0;
@@ -439,11 +483,14 @@ ul{
             
                 .navlink-text{
                     padding: 10px;
-                    background-color:red;
                     @include d-ss;
                     @include glass;
                     background:linear-gradient( to right top, rgba(255,255,255,0.4), rgba(255,255,255,0.7)) !important;
                     height: auto;
+                    transition: all ease 0.4s;
+                    &:hover{
+                        box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+                    }
                 }
                 
             }

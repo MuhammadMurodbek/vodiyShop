@@ -1,13 +1,16 @@
-import React,{useState,useEffect,useContext} from 'react'
-import {NavLink, Route,Switch} from 'react-router-dom'
-import Data from './Data.json'
+import React,{useState,useEffect,useRef, useContext} from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import {StoreContext} from '../Store/StoreG' 
-import Main from './Main'
+import {NavLink} from 'react-router-dom'
+import Data from './Data.json'
+
 const Category = () => {
     
-    // const [selectItem, setSelectItem] = useState('')
-   
+    const [selectItem, setSelectItem] = useState('')
     const {checkCategory} = useContext(StoreContext)
+    useEffect(()=>{
+        console.log(selectItem)
+    },[selectItem])
 
     let products=Data.products
     let proFilter = products.map(item=>item.category)
@@ -20,8 +23,23 @@ const Category = () => {
         lastFilter.push(products.filter(item=>item.category===last)[0])
     })
     // console.log(lastFilter)
+    
     return (
         <div className="category">
+            <div className="category-items">
+                <h4><i className="fa fa-shopping-basket fa-fw"></i> Mahsulotlar kategoriyasi</h4>
+                <span className="category-items-sort">
+                    <h4>Saralash</h4>
+                    <select 
+                        className="selection" 
+                        onClick={(e)=>{setSelectItem(e.target.value)}}
+                    >
+                        <option value="new">Yangi</option>
+                        <option value="old">Eski</option>
+                    </select>
+                </span>
+            </div>
+
             <ul className="category-wrapper">
                 {
                     lastFilter.map((item,index)=>(
@@ -40,7 +58,6 @@ const Category = () => {
                     ))
                 }
             </ul>
-            
         </div>
     )
     
