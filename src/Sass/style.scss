@@ -16,7 +16,6 @@
 @mixin glass{
     background:white;
     background:linear-gradient( to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
-    // background: linear-gradient(to right,  rgba( 255, 255, 255, 0.1 ), rgba(194, 235, 235, 0.45));
     box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
     backdrop-filter: blur(1rem );
     border-radius: 20px;
@@ -24,9 +23,10 @@
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
 .progLine{
-    position: absolute;
+    position: sticky;
     width: 100%;
-    top: 0;
+    top:0;
+    z-index: 10;
 }
 
 body{
@@ -391,19 +391,6 @@ ul{
     height: auto;
     position: relative;
     text-align: center;
-    &::before{
-        content: "";
-        position: absolute;
-        top:-20px;
-        left:8px;
-        display:inline-block;
-        width: 100px;
-        height: 100px;
-        background:rgb(255, 255, 255);
-        box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
-        background:linear-gradient( to left bottom, rgba(192, 3, 129, 0.2), rgba(255,255,255,0.9));
-        border-radius: 50%;
-    }
     &::after{
         content: "";
         position: absolute;
@@ -417,12 +404,68 @@ ul{
         background:linear-gradient( to left top, rgba(255,255,255,0.9), rgba(255,255,255,0.1));
         border-radius: 20px;
     }
+    &-slick{
+        &-slider{
+            &-item{
+                width: 300px;
+                height: 250px;
+                padding: 5px;
+                box-sizing: border-box;
+                .inner{
+                    position: relative;
+                    @include glass;
+                    padding: 10px 10px 8px;
+                    height:auto;
+                    overflow: hidden;
+                    img{
+                        position: relative;
+                        width: 100%;
+                        height: 200px;
+                        border-radius: 20px;
+                        object-fit: cover;
+                        z-index: 1;
+                    }
+                    h4{
+                        position: absolute;
+                        left:50%;
+                        bottom: -7%;
+                        width: 94%;
+                        height: auto;
+                        padding: 10px 0;
+                        transform:translateX(-50%);
+                        backdrop-filter: blur(0.23rem);
+                        box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+                        background:linear-gradient( to top, rgba(255,255,255,0.9), rgba(255,255,255,0.1));
+                        border-radius: 20px;
+                        color: #fff;
+                        z-index: 18;
+                    }
+                }
+            }
+        }
+    }
     &-items{
         @include glass;
         @include d-sa;
         flex-wrap: wrap;
         width: 95%;
         margin: 30px auto 0;
+        // position: relative;
+        // z-index: 3;
+        // &::before{
+        //     content: "";
+        //     position: absolute;
+        //     top:-20px;
+        //     left:8px;
+        //     display:inline-block;
+        //     width: 100px;
+        //     height: 100px;
+        //     background:rgb(255, 255, 255);
+        //     box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
+        //     background:linear-gradient( to left bottom, rgba(192, 3, 129, 0.2), rgba(255,255,255,0.9));
+        //     border-radius: 50%;
+        //     z-index: 1;
+        // }
         h4,h5{
             margin: 20px 10px;
             padding: 0;

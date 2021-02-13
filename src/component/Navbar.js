@@ -4,7 +4,7 @@ import Badge from '@material-ui/core/Badge'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import {NavLink} from 'react-router-dom'
 
-export  function Navbar() {
+function Navbar() {
     const [check, setCheck] = useState(true)
     return (
         <div>
@@ -40,3 +40,4 @@ export  function Navbar() {
         </div>
     )
 }
+export default Navbar

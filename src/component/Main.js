@@ -3,7 +3,10 @@ import TextTruncate from 'react-text-truncate';
 import SearchIcon from '@material-ui/icons/Search';
 import {StoreContext} from '../Store/StoreG'
 function Main() {
-    const {dataChecked} = useContext(StoreContext)
+    const {dataChecked, setLoaderPro} = useContext(StoreContext)
+    useEffect(() =>{
+        setLoaderPro(false)
+    },[])
     // console.log(dataChecked)
     return (
         <div className="main">
