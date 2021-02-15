@@ -2,12 +2,13 @@ import React,{useContext, useState, useEffect} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import SearchIcon from '@material-ui/icons/Search';
 import {StoreContext} from '../Store/StoreG'
+import useLocalStorage from '../hooks/useLocalStorage'
 function Main() {
-    const {dataChecked, setLoaderPro} = useContext(StoreContext)
-    useEffect(() =>{
-        setLoaderPro(false)
-    },[])
-    // console.log(dataChecked)
+    
+    const {dataChecked} = useContext(StoreContext)
+    console.log(dataChecked)
+    const [localData, setLocalData] = useState(dataChecked)
+    
     return (
         <div className="main">
             <span className="search">

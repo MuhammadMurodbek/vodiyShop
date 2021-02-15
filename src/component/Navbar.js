@@ -1,24 +1,34 @@
 import React,{useState} from 'react'
 import IconButton from '@material-ui/core/IconButton'
 import Badge from '@material-ui/core/Badge'
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import { Sling as Hamburger } from 'hamburger-react'
 import {NavLink} from 'react-router-dom'
 
 function Navbar() {
     const [check, setCheck] = useState(true)
+    
+    //Hamburger Menu
+    const [isOpen, setOpen] = useState(false)
     return (
         <div>
+            <img className="clouds-img"src="/images/clouds.png" alt="asdf"/>
+            <img className="circle-img" src="/images/circle.png" alt="asd"/>
+            <img id="loading" className="scatter-img" src="/images/scatter.png" alt="asd"/>
             <div className="navbar">
             <div className="navbar-part">
                <span className={check ? "navbar-part-info checkNavbarFalse": "navbar-part-info checkNavbarTrue" } >
                     <span className="nav-br-btn">
-                        <a href="#">Online Market</a>
+                        <a href="#" className="nav-br-btn-link">
+                            <img src="/images/soap.png" alt="ds"/>
+                            Vodiy Parfum</a>
                         <button 
                             className="nav-btn"
                             onClick={() =>{setCheck(!check)}}
-                        >
-                            {check ? <i className="fa fa-2x fa-bars"></i>:<i className="fa fa-2x fa-times"></i>}
-                            
+                        > 
+                            <Hamburger  
+                                toggled={isOpen} 
+                                toggle={setOpen} 
+                            />
                         </button>
                     </span>
                     <ul className="nav-list">
@@ -31,7 +41,7 @@ function Navbar() {
                 <span className="navbar-part-shop">
                     <IconButton style={{color:"#426696"}} aria-label="add to shopping cart">
                         <Badge badgeContent={4} color="secondary">
-                            <AddShoppingCartIcon />
+                            <img src="/images/groc.png" alt="asd"/>
                         </Badge>   
                     </IconButton>
                 </span>

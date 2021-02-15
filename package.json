@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "git": "^0.1.5",
+    "hamburger-react": "^2.4.0",
     "react": "^17.0.1",
     "react-animated-css": "^1.2.1",
     "react-awesome-slider": "^4.1.0",

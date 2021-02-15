@@ -5,10 +5,12 @@ const Footer = () => {
         <div className="footer">
             <div className="footer-wrapper">
                 <div className="left">
+                    <img src="/images/soap.png" alt="asdf"/>
                     <h3><i className="fa fa-user"></i> Biz haqimizda</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni tempora, doloremque fugit aut odio officiis delectus quasi dolores illum sunt! Et neque asperiores modi cumque commodi accusamus omnis ipsa sint.</p>
                 </div>
                 <div className="right-top">
+                   <img src="/images/clouds.png" alt="asdf"/>
                    <h3><i className="fa fa-phone"></i> Biz bilan aloqa</h3>
                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quam blanditiis itaque ratione, eos perspiciatis maxime doloribus in ullam molestias veritatis facere possimus autem facilis optio, illum nostrum consequuntur accusamus?</p>
                 </div>

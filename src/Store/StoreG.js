@@ -7,11 +7,11 @@ export const StoreContext = createContext()
 const StoreG = (props) => {
     var dataStore = Data.products
 
-    const [loaderPro, setLoaderPro] = useState(false)
+    // const [loaderPro, setLoaderPro] = useState(false)
 
     //states for slick carousel in Category.js
     const [slickData, setSlickData] = useState([])
-    console.log(slickData)
+    // console.log(slickData)
    
     /// this part lets you to open products menu which are selected 
     const [checkItem, setCheckItem] = useState()
@@ -36,7 +36,6 @@ const StoreG = (props) => {
         <StoreContext.Provider 
             value={
                 {
-                    setLoaderPro,
                     checkCategory,
                     dataChecked,
                     slickData

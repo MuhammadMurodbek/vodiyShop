@@ -49,6 +49,7 @@ const Category = () => {
         console.log(selectItem)
     },[selectItem])
 
+    ///data products
     let products=Data.products
     let proFilter = products.map(item=>item.category)
     let checkProFilter=[], lastFilter=[]
@@ -64,7 +65,7 @@ const Category = () => {
         <div className="category">
 
             <div className="category-slick">
-                <h2>Bizning Mahsulotlar</h2>
+                <h2 className="category-title"><img src="/images/soapa.png" alt=""/> Yangi mahsulotlar</h2>
                 <Slider {...settings} className="category-slick-slider">
                    {slickData.map(slick=>(
                        <div key={slick.id} className="category-slick-slider-item">
