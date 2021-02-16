@@ -1,23 +1,28 @@
 import React from 'react'
-
 const Footer = () => {
     return (
         <div className="footer">
-            <div className="footer-wrapper">
-                <div className="left">
-                    <img src="/images/soap.png" alt="asdf"/>
-                    <h3><i className="fa fa-user"></i> Biz haqimizda</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni tempora, doloremque fugit aut odio officiis delectus quasi dolores illum sunt! Et neque asperiores modi cumque commodi accusamus omnis ipsa sint.</p>
-                </div>
-                <div className="right-top">
-                   <img src="/images/clouds.png" alt="asdf"/>
-                   <h3><i className="fa fa-phone"></i> Biz bilan aloqa</h3>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quam blanditiis itaque ratione, eos perspiciatis maxime doloribus in ullam molestias veritatis facere possimus autem facilis optio, illum nostrum consequuntur accusamus?</p>
-                </div>
-                <div className="right-bottom">
-                    <h3><i className="fa fa-comments"></i> Taklifnomalar</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fuga sint eaque blanditiis earum odio quaerat tempora quasi cum est provident, harum itaque unde ipsum minus eos, deleniti, perspiciatis perferendis?</p>
-                </div>
+            <div className="footer-about">
+                <h3>Biz haqimizda</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quam dolorem, labore repellat expedita est rerum quos doloremque, odit in quasi culpa, maxime voluptates accusamus aperiam corporis pariatur officiis ut.</p>
+                <span>
+                    <a href="#"><i className="fa fa-fw fa-telegram"></i></a>
+                    <a href="#"><i className="fa fa-fw fa-youtube"></i></a>
+                    <a href="#"><i className="fa fa-fw fa-facebook-f"></i></a>
+                    <a href="#"><i className="fa fa-fw fa-instagram"></i></a>
+                </span>
+            </div>
+            <div className="footer-contact">
+                <h3>Biz bilan aloqa</h3>
+                <span>
+                    <p>Farg'ona viloyati, Qoqon </p>
+                    <p>+99899343434</p>
+                    <p>vodiyShopOnline@gmail.uz</p>
+                </span>
+            </div>
+            <div className="footer-news">
+                <h3>Yangiliklar</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nesciunt facilis ut provident modi laudantium aliquam, labore natus amet ex quo facere. Quisquam maiores sit totam suscipit et, in deserunt!</p>
             </div>
         </div>
     )

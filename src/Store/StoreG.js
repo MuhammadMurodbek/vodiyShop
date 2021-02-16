@@ -7,15 +7,14 @@ export const StoreContext = createContext()
 const StoreG = (props) => {
     var dataStore = Data.products
 
-    // const [loaderPro, setLoaderPro] = useState(false)
-
-    //states for slick carousel in Category.js
-    const [slickData, setSlickData] = useState([])
-    // console.log(slickData)
+    // //states for slick carousel in Category.js
+     const [slickData, setSlickData] = useState([])
+    // // console.log(slickData)
    
     /// this part lets you to open products menu which are selected 
     const [checkItem, setCheckItem] = useState()
     const [dataChecked, setDataChecked] = useState([])
+   
     const checkCategory=(item)=>{setCheckItem(item)}
     
     useEffect(() =>{
@@ -25,20 +24,21 @@ const StoreG = (props) => {
     },[checkItem])
 
     /// using axios to get data for our slick-carousel
-    useEffect(() =>{
-        axios.get('https://reqres.in/api/users?page=2')
-            .then(response => setSlickData(response.data.data))
-            .catch(error => console.log(error))
-    },[])
+    // useEffect(() =>{
+    //     axios.get('https://reqres.in/api/users?page=2')
+    //         .then(response => setSlickData(response.data.data))
+    //         .catch(error => console.log(error))
+    // },[])
     /// !using axios to get data for our slick-carousel
    
     return (
         <StoreContext.Provider 
             value={
                 {
+                    dataStore,
                     checkCategory,
                     dataChecked,
-                    slickData
+                    // slickData
                 }
             }
         >

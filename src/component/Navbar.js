@@ -11,12 +11,9 @@ function Navbar() {
     const [isOpen, setOpen] = useState(false)
     return (
         <div>
-            <img className="clouds-img"src="/images/clouds.png" alt="asdf"/>
-            <img className="circle-img" src="/images/circle.png" alt="asd"/>
-            <img id="loading" className="scatter-img" src="/images/scatter.png" alt="asd"/>
             <div className="navbar">
             <div className="navbar-part">
-               <span className={check ? "navbar-part-info checkNavbarFalse": "navbar-part-info checkNavbarTrue" } >
+               <span className={check ? "navbar-part-info checkNavbarFalse":"navbar-part-info checkNavbarTrue" } >
                     <span className="nav-br-btn">
                         <a href="#" className="nav-br-btn-link">
                             <img src="/images/soap.png" alt="ds"/>

@@ -3,7 +3,7 @@ import {StoreContext} from '../Store/StoreG'
 import {NavLink} from 'react-router-dom'
 import Slider from "react-slick"
 import Data from './Data.json'
-const Category = () => {
+const Category = ({setData}) => {
 
     const settings = {
         autoplay:true,
@@ -42,7 +42,7 @@ const Category = () => {
         ]
     };
 
-    const {checkCategory, slickData} = useContext(StoreContext)
+    const {checkCategory,dataStore} = useContext(StoreContext)
    
     const [selectItem, setSelectItem] = useState('') 
     useEffect(()=>{
@@ -60,18 +60,24 @@ const Category = () => {
     checkProFilter.forEach(last=>{
         lastFilter.push(products.filter(item=>item.category===last)[0])
     })
-  
+    const getDataProduct =(item)=>{
+        const initialState = [...dataStore].filter(data=>data.category==item)
+        setData([...initialState])
+        checkCategory(item)
+    }
     return (
         <div className="category">
-
             <div className="category-slick">
-                <h2 className="category-title"><img src="/images/soapa.png" alt=""/> Yangi mahsulotlar</h2>
+                <h2 className="category-title">
+                    <img src="/images/newproduct.png" alt="dfdff"/>
+                    Yangi mahsulotlar
+                </h2>
                 <Slider {...settings} className="category-slick-slider">
-                   {slickData.map(slick=>(
+                   {lastFilter.map(slick=>(
                        <div key={slick.id} className="category-slick-slider-item">
                            <div className="inner">
-                                <img src={slick.avatar} alt={slick.first_name}/>
-                                <h4>{slick.first_name+" "+slick.last_name}</h4>
+                                <img src={slick.image} alt={slick.title}/>
+                                <h4>{slick.title}</h4>
                            </div>
                        </div>
                    ))}
@@ -102,11 +108,7 @@ const Category = () => {
                                 <NavLink 
                                     to="/products" 
                                     className="navlink-text"
-                                    onClick={
-                                        ()=>{
-                                            checkCategory(item.category)
-                                        }
-                                    }
+                                    onClick={()=>{getDataProduct(item.category)}                                    }
                                 >
                                     {item.title}
                                 </NavLink>
