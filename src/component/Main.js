@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import SearchIcon from '@material-ui/icons/Search'
+import {StoreContext} from '../Store/StoreG'
 function Main({data}) {
-    
+  const {setShopCart} = useContext(StoreContext)
+
+  const clickChange=(item)=>{
+    setShopCart(prev=>[...prev,item])
+  }
+
   return (
     <div className="main">
       <span className="search">
@@ -28,7 +34,11 @@ function Main({data}) {
                       />
                       <span className="cost-btn">
                         <h5>${product.price}</h5>
-                        <button>Add</button>
+                        <button 
+                          onClick={() => clickChange(product)}
+                        >
+                          Add
+                        </button>
                       </span>
                     </span>
                   </div>

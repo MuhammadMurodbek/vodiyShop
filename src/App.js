@@ -1,6 +1,9 @@
 import React,{useState, useEffect} from 'react' 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import AnimatedCursor from 'react-animated-cursor'
+import {
+  BrowserRouter as Router, 
+  Switch, 
+  Route
+} from 'react-router-dom'
 import Category from './component/Category'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer';
@@ -18,15 +21,6 @@ const App = () => {
 
   return (
     <StoreG>
-      <AnimatedCursor
-        innerSize={17}
-        outerSize={17}
-        color='3, 72, 150'
-        outerAlpha={0.2}
-        innerScale={0.7}
-        outerScale={5}
-      />
-      
       <Router>
         <Navbar/>
         <Switch>

@@ -73,8 +73,8 @@ const Category = ({setData}) => {
                     Yangi mahsulotlar
                 </h2>
                 <Slider {...settings} className="category-slick-slider">
-                   {lastFilter.map(slick=>(
-                       <div key={slick.id} className="category-slick-slider-item">
+                   {lastFilter.map((slick,index)=>(
+                       <div key={index} className="category-slick-slider-item">
                            <div className="inner">
                                 <img src={slick.image} alt={slick.title}/>
                                 <h4>{slick.title}</h4>

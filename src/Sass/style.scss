@@ -22,12 +22,12 @@
     color:#426696;
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
+
 html{
     width: 100vw;
     overflow-x: hidden;
 }
 body{
-    box-sizing: border-box;
     width: 100vw;
     margin: 0 auto;
     padding: 0;
@@ -36,20 +36,10 @@ body{
     overflow-x: hidden;
     // background:linear-gradient(to right top, #65dfc9,#6cdbeb);
     color:#426696;
-    background: linear-gradient(-45deg, #ca6b4e, #e73c7e, #6cdbeb, #23a6d5, #23d5ab);
+    background-color: #67ded1;
+    // background: linear-gradient(-45deg, #aaf1e1 , #8de0ff , #99effa, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 body::-webkit-scrollbar {
@@ -341,69 +331,6 @@ ul{
     }
 }
 
-//Footer *********************************
-
-.footer{
-    display:flex;
-    justify-content:center;
-    width: 95%;
-    padding: 10px;
-    margin: 30px auto;
-    @include glass;
-    background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.6 ));
-    box-sizing: border-box;
-    h3{
-        position: relative;
-        display:inline-block;
-        font-weight: 400;
-        &::after{
-            position: absolute;
-            bottom:0;
-            left: 0;
-            content:"";
-            width: 60%;
-            height: 2px;
-            border-radius: 20px;
-            background-color:#0b6db3;
-        }
-    }
-    p{
-        font-size: 0.9rem;
-    }
-    div{
-        width: 400px;
-        padding: 10px;
-    }
-    &-about{
-        span{
-            width: 60%;
-            @include d-sa;
-            a{
-                @include glass;
-                padding: 5px 8px;
-                border-radius: 12px;
-                box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
-                .fa-telegram{
-                    color:#426696;
-                }
-                .fa-youtube{
-                    color:red;
-                }
-                .fa-facebook{
-                    color:#725de4;
-                }
-                .fa-instagram{
-                    color:#f9189f;
-                }
-            }
-        }
-    }
-    @media only screen and (max-width:740px){
-        &{
-            flex-wrap: wrap;
-        }
-    }
-}
 
 //CATEGORY  **************************
  
@@ -582,3 +509,228 @@ ul{
         font-size: 1rem !important;
     }
 } 
+
+// SHOPPING CART 
+.store-shop{
+    @include glass;
+    display:flex;
+    width: 95%;
+    height: auto;
+    margin: 30px auto 0;
+    &-form{
+        flex:1;
+        padding: 20px;
+        border-radius:20px;
+        background-color:rgba(255,255,255,0.6);
+        text-align: center;
+        p{
+            margin: 10px 0;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            input{
+                width: 90%;
+                padding: 10px;
+                margin: 10px auto;
+                border:none;
+                border-radius: 13px;
+                outline:none;
+                font-family: 'Poppins',sans-serif;
+            }
+            button{
+                width: 96%;
+                margin: 0 auto;
+            }
+        }
+
+
+    }
+    &-cart{
+        flex:3;
+        padding: 0 20px;
+        .title-header{
+            @include d-sb;
+            padding: 10px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #fff;
+            h3{
+                margin: 0;
+                padding: 0;
+                font-weight: 400;
+                font-size: 1rem;
+            }
+        }
+        
+        table{
+            width: 100%;
+            border-spacing: 0 1rem;
+            
+            thead, tbody{
+                text-align:center;
+                th:first-child, 
+                td:first-child{
+                    text-align:left;
+                }
+            }
+
+            thead{
+                
+                th{
+                    font-size: 14.4px;
+                    font-weight: 400;
+                }
+            }
+
+            tbody{
+                height: auto;
+               
+                .product-item{
+                    //table row
+                    border-spacing: 14px;
+                    td{
+                        font-weight: 400;
+                        font-size: 0.9rem;
+                        background-color:rgba(255,255,255,0.6);
+                    }
+                    .product-item-first{
+                        border-radius: 20px 0 0 20px;
+                        div{
+                            @include d-sa;
+                            justify-content:left;
+                            img{
+                                width: 100px;
+                                height: 100px;
+                                object-fit: cover;
+                                margin: 8px;
+                                border-radius: 20px;
+                            }
+                            h5{
+                                margin: 0;
+                                padding: 0;
+                                font-weight: 400;
+                                font-size: 14.4px;
+                            }
+                            button{
+                                color:rgb(226, 80, 80);
+                            }
+                        }
+                    }
+
+                    .product-item-second{
+                        button{
+                            padding: 10px;
+                            border:none;
+                            background-color:transparent;
+                            font-size: 1rem;
+                            font-weight: bold;
+                            color: #426696;
+                            cursor:pointer;
+                        }
+                    }
+                    .product-item-fourth{
+                        border-radius: 0 20px 20px 0;
+                    }
+
+                }
+            }
+            
+        }
+        .title-footer{
+            @include d-sb;
+            margin-top: 10px;
+            padding: 10px 0;
+            border-top: 1px solid #fff;
+            h3{
+                margin: 0;
+                transform:translateY(10px);
+            }
+        }
+    }
+
+    //common styles for /Shopping cart
+   .btn-style{
+    margin-top: 20px;
+    padding: 7px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size:0.88rem;
+    outline:none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 1px 32px 0 rgba( 31, 38, 135, 0.1 );
+    backdrop-filter: blur( 55px );
+    -webkit-backdrop-filter: blur( 55px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.02 );
+    color:#426696;
+   }
+}
+//!product-part
+ 
+
+//Footer *********************************
+
+.footer{
+    display:flex;
+    justify-content:center;
+    width: 95%;
+    padding: 10px;
+    margin: 30px auto;
+    @include glass;
+    background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.6 ));
+    box-sizing: border-box;
+    h3{
+        position: relative;
+        display:inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        &::after{
+            position: absolute;
+            bottom:0;
+            left: 0;
+            content:"";
+            width: 60%;
+            height: 2px;
+            border-radius: 20px;
+            background-color:#0b6db3;
+        }
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    div{
+        width: 400px;
+        padding: 10px;
+    }
+    &-about{
+        span{
+            width: 60%;
+            @include d-sa;
+            a{
+                @include glass;
+                padding: 5px 8px;
+                border-radius: 12px;
+                box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
+                .fa-telegram{
+                    color:#426696;
+                }
+                .fa-youtube{
+                    color:red;
+                }
+                .fa-facebook{
+                    color:#725de4;
+                }
+                .fa-instagram{
+                    color:#f9189f;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width:740px){
+        &{
+            flex-wrap: wrap;
+        }
+    }
+}
