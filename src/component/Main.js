@@ -3,10 +3,12 @@ import TextTruncate from 'react-text-truncate';
 import SearchIcon from '@material-ui/icons/Search'
 import {StoreContext} from '../Store/StoreG'
 function Main({data}) {
-  const {setShopCart} = useContext(StoreContext)
+  const {shopCart,setShopCart} = useContext(StoreContext)
 
   const clickChange=(item)=>{
-    setShopCart(prev=>[...prev,item])
+    if(!shopCart.includes(item)){
+      setShopCart(prev=>[...prev,item])
+    }
   }
 
   return (

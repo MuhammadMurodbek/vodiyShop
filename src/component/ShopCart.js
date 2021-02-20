@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useState,useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
-
-
+import {StoreContext} from '../Store/StoreG'
 
 const ShopCart = () => {
-   
+    const {shopCart, setShopCart} = useContext(StoreContext)
+    const [count, setCount] = useState(1)
+
+    const deleteFunc = (item) =>{
+        setShopCart([...shopCart].filter(prev=>prev._id !== item))
+    }
     return (
         <div className="store-shop">
             <div className="store-shop-cart">
@@ -22,59 +26,40 @@ const ShopCart = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="product-item">
-                            <td className="product-item-first">
-                                <div>
-                                    <img src="https://picsum.photos/120" alt=""/>
-                                    <span>
-                                    <TextTruncate
-                                        line={2}
-                                        element="h5"
-                                        truncateText="…"
-                                        text="Shampun"
-                                    />
-                                        <h5>kategoriya</h5>
-                                        <button className="btn-style">
-                                            <i className="fa fa-trash"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </td>
-                            <td className="product-item-second">
-                                <button>-</button>
-                                <span>2</span>
-                                <button>+</button>
-                            </td>
-                            <td className="product-item-third">$44</td>
-                            <td className="product-item-fourth">$44</td>
-                        </tr>
-
-                        <tr className="product-item">
-                            <td className="product-item-first">
-                                <div>
-                                    <img src="https://picsum.photos/100" alt=""/>
-                                    <span>
-                                       <TextTruncate
-                                        line={2}
-                                        element="h5"
-                                        truncateText="…"
-                                        text="Shampun"
-                                    />
-                                        <h5>kategoriya</h5>
-                                        <button className="btn-style">
-                                            <i className="fa fa-trash"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </td>
-                            <td className="product-item-second">
-                                <button>-</button>
-                                <span>2</span>
-                                <button>+</button>
-                            </td>
-                            <td className="product-item-third">$44</td>
-                            <td className="product-item-fourth">$44</td>
-                        </tr>
+                        {
+                            shopCart.map((item,index) =>(
+                                <tr key={index} className="product-item">
+                                    <td className="product-item-first">
+                                        <div>
+                                            <img src={item.image} alt={item.title}/>
+                                            <span>
+                                            <TextTruncate
+                                                line={2}
+                                                element="h5"
+                                                truncateText="…"
+                                                text={item.title}
+                                            />
+                                                <h5>{item.category}</h5>
+                                                <button 
+                                                    className="btn-style"
+                                                    onClick={()=>{deleteFunc(item._id)}}
+                                                >
+                                                    <i className="fa fa-trash"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td className="product-item-second">
+                                        <button onClick={()=>setCount(count-1)}>-</button>
+                                        <span>{count}</span>
+                                        <button onClick={()=>setCount(count+1)}>+</button>
+                                    </td>
+                                    <td className="product-item-third">$44</td>
+                                    <td className="product-item-fourth">$44</td>
+                                </tr>
+    
+                            ))
+                        }
                        
                     </tbody>
                 </table>
@@ -106,7 +91,10 @@ const ShopCart = () => {
                         placeholder="Password" 
                         name="password"
                     />
-                  <button className="btn-style"><i className="fa fa-send"></i> Buyurtmani jo'natish</button>
+                    <button className="btn-style">
+                      <i className="fa fa-send"></i> 
+                      Buyurtmani jo'natish
+                    </button>
                 </form>
             </div>
         </div>

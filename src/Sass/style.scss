@@ -22,7 +22,9 @@
     color:#426696;
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
-
+*{
+    outline: none;
+}
 html{
     width: 100vw;
     overflow-x: hidden;

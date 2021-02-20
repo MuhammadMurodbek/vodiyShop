@@ -1,10 +1,13 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import IconButton from '@material-ui/core/IconButton'
 import Badge from '@material-ui/core/Badge'
 import { Sling as Hamburger } from 'hamburger-react'
-import {NavLink} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
+import {StoreContext} from '../Store/StoreG'
 
 function Navbar() {
+    const {shopCart} = useContext(StoreContext)
+    
     const [check, setCheck] = useState(true)
     
     //Hamburger Menu
@@ -36,11 +39,22 @@ function Navbar() {
                     </ul>
                </span>
                 <span className="navbar-part-shop">
-                    <IconButton style={{color:"#426696"}} aria-label="add to shopping cart">
-                        <Badge badgeContent={4} color="secondary">
-                            <img src="/images/groc.png" alt="asd"/>
-                        </Badge>   
-                    </IconButton>
+                   <Link to="/store">
+                        <IconButton 
+                            style={{color:"#426696"}} 
+                            aria-label="add to shopping cart"
+                        >
+                            <Badge 
+                                badgeContent={shopCart.length} 
+                                color="secondary"
+                            >
+                                <img 
+                                    src="/images/groc.png" 
+                                    alt="asd"
+                                />
+                            </Badge>   
+                        </IconButton>
+                   </Link>
                 </span>
             </div>
         </div> 

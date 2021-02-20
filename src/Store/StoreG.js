@@ -6,7 +6,7 @@ export const StoreContext = createContext()
 const StoreG = (props) => {
     var dataStore = Data.products
 
-    /// this part lets you to open products menu which are selected 
+    /// Selected items from Category.js to Main.js
     const [checkItem, setCheckItem] = useState()
     const [dataChecked, setDataChecked] = useState([])
     const checkCategory=(item)=>{setCheckItem(item)}
@@ -19,9 +19,10 @@ const StoreG = (props) => {
 
 
     //ShopCart.js save products to Cart
-    const [shopCart, setShopCart] = useState([])
+    const shopCartState = JSON.parse(localStorage.getItem('shopCart')) || []
+    const [shopCart, setShopCart] = useState(shopCartState)
     useEffect(() =>{
-        console.log(shopCart)
+        localStorage.setItem('shopCart', JSON.stringify(shopCart))
     },[shopCart])
 
 
@@ -32,7 +33,8 @@ const StoreG = (props) => {
                     dataStore,
                     checkCategory,
                     dataChecked,
-                    setShopCart
+                    setShopCart,
+                    shopCart
                 }
             }
         >
