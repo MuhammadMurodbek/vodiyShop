@@ -7,8 +7,7 @@ function Main({data}) {
 
   const clickChange=(item)=>{
     if(!shopCart.includes(item)){
-      setShopCart(prev=>[...prev,item])
-    }
+      setShopCart(prev=>[...prev,item])}
   }
 
   return (

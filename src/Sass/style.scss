@@ -586,8 +586,8 @@ ul{
             }
 
             tbody{
-                height: auto;
-               
+                max-height: 776px;
+                overflow-y: scroll;
                 .product-item{
                     //table row
                     border-spacing: 14px;

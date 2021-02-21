@@ -62,7 +62,12 @@ const Category = ({setData}) => {
     })
     const getDataProduct =(item)=>{
         const initialState = [...dataStore].filter(data=>data.category==item)
-        setData([...initialState])
+        setData([...initialState].map(val=>{
+            return({
+                ...val,
+                count:1
+            })
+        }))
         checkCategory(item)
     }
     return (

@@ -4,10 +4,20 @@ import {StoreContext} from '../Store/StoreG'
 
 const ShopCart = () => {
     const {shopCart, setShopCart} = useContext(StoreContext)
-    const [count, setCount] = useState(1)
 
     const deleteFunc = (item) =>{
         setShopCart([...shopCart].filter(prev=>prev._id !== item))
+    }
+
+    const addCount = (val) =>{
+        [...shopCart].find(item=>item._id === val).count+=1
+        setShopCart([...shopCart])
+    }
+    const devCount = (val) =>{
+        if([...shopCart].find(item=>item._id === val).count>1){
+            [...shopCart].find(item=>item._id === val).count-=1
+            setShopCart([...shopCart])
+        }
     }
     return (
         <div className="store-shop">
@@ -50,9 +60,9 @@ const ShopCart = () => {
                                         </div>
                                     </td>
                                     <td className="product-item-second">
-                                        <button onClick={()=>setCount(count-1)}>-</button>
-                                        <span>{count}</span>
-                                        <button onClick={()=>setCount(count+1)}>+</button>
+                                        <button onClick={()=>{devCount(item._id)}}>-</button>
+                                        <span>{item.count}</span>
+                                        <button onClick={()=>{addCount(item._id)}}>+</button>
                                     </td>
                                     <td className="product-item-third">$44</td>
                                     <td className="product-item-fourth">$44</td>

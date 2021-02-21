@@ -22,9 +22,9 @@ const StoreG = (props) => {
     const shopCartState = JSON.parse(localStorage.getItem('shopCart')) || []
     const [shopCart, setShopCart] = useState(shopCartState)
     useEffect(() =>{
+        console.log(shopCart)
         localStorage.setItem('shopCart', JSON.stringify(shopCart))
     },[shopCart])
-
 
     return (
         <StoreContext.Provider 

@@ -850,7 +850,8 @@ ul {
   font-weight: 400;
 }
 .store-shop-cart table tbody {
-  height: auto;
+  max-height: 776px;
+  overflow-y: scroll;
 }
 .store-shop-cart table tbody .product-item {
   border-spacing: 14px;
