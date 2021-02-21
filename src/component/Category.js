@@ -50,7 +50,7 @@ const Category = ({setData}) => {
     },[selectItem])
 
     ///data products
-    let products=Data.products
+    let products=dataStore
     let proFilter = products.map(item=>item.category)
     let checkProFilter=[], lastFilter=[]
 
@@ -60,6 +60,7 @@ const Category = ({setData}) => {
     checkProFilter.forEach(last=>{
         lastFilter.push(products.filter(item=>item.category===last)[0])
     })
+    
     const getDataProduct =(item)=>{
         const initialState = [...dataStore].filter(data=>data.category==item)
         setData([...initialState].map(val=>{
