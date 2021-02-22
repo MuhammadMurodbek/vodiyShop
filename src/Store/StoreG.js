@@ -1,5 +1,6 @@
 import React,{createContext,useState,useEffect} from 'react'
 import Data from '../component/Data.json'
+import axios from 'axios'
 
 export const StoreContext = createContext()
 
@@ -26,6 +27,15 @@ const StoreG = (props) => {
         localStorage.setItem('shopCart', JSON.stringify(shopCart))
     },[shopCart])
 
+    //SHOPCART, WORKING WITH FORM 
+    const getValueForm=(formData)=>{
+        const combinedData = {dataForm:{}, dataProduct:[]}
+        combinedData.dataForm = formData
+        combinedData.dataProduct = [...shopCart]
+        axios.post('https://jsonplaceholder.typicode.com/posts',combinedData)
+            .then(response =>console.log(response))
+            .catch(error =>console.log(error))
+    }
     return (
         <StoreContext.Provider 
             value={
@@ -34,7 +44,8 @@ const StoreG = (props) => {
                     checkCategory,
                     dataChecked,
                     setShopCart,
-                    shopCart
+                    shopCart,
+                    getValueForm
                 }
             }
         >

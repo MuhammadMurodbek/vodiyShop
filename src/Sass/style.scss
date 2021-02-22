@@ -294,6 +294,10 @@ ul{
                     border-radius: 15px;
                     border: 1px solid rgba( 255, 255, 255, 0.02 );
                     color:#658ec6;
+                    transition: all ease 0.15s;
+                    &:active{
+                        transform: scale(1.2);
+                    }
                 }
             }
         }
@@ -544,6 +548,9 @@ ul{
             button{
                 width: 96%;
                 margin: 0 auto;
+                i{
+                    margin-right: 10px;
+                }
             }
         }
 
@@ -702,6 +709,71 @@ ul{
     border: 1px solid rgba( 255, 255, 255, 0.02 );
     color:#426696;
    }
+   @media only screen and (max-width:928px){
+       &{
+           flex-wrap: wrap;
+           flex-direction: column;
+           form{
+               button{
+                   width: 94%;
+               }
+           }
+       }
+    }
+    @media only screen and (max-width:455px){
+       
+        &-cart{
+
+            .title-header{
+                h3{  
+                    font-size: 0.8rem !important;
+                }
+            }
+
+            table{
+                th, td ,td h5{
+                  font-size:0.75rem !important;  
+                }
+                td{
+                    img{
+                        min-width:100px !important;
+                        margin: 3px !important;
+                    }
+                }
+                .product-item-second{
+                    @include d-sb;
+                    flex-direction: column-reverse !important;
+                    height: 108px !important;
+                }
+                
+            }
+
+            .title-footer{
+                h3,button{
+                    padding: 5px 8px;
+                    font-size:0.75rem !important;
+                } 
+            }
+        }
+
+        &-form{
+           @include d-ss;
+           flex-direction: column;
+           padding: 5px;
+           
+           p{
+               width: 200px;
+               height: auto;
+               margin: 0;
+               font-size: 0.7rem;
+           }
+           input{
+               min-width: 250px !important;
+               margin: 10px 5px !important;
+           }
+        }
+
+    }
 }
 //!product-part
  

@@ -3,9 +3,16 @@ import TextTruncate from 'react-text-truncate';
 import {StoreContext} from '../Store/StoreG'
 
 const ShopCart = () => {
-    const {shopCart, setShopCart} = useContext(StoreContext)
 
+    const initialState = 0
+    const {shopCart, setShopCart, getValueForm} = useContext(StoreContext)
     const [collect, setCollect] = useState()
+    const [formData, setFormData] = useState({
+        firstname:'',
+        lastname:'',
+        login:'',
+        password:'',
+    })
 
     const deleteFunc = (item) =>{
         setShopCart([...shopCart].filter(prev=>prev._id !== item))
@@ -16,17 +23,37 @@ const ShopCart = () => {
         setShopCart([...shopCart])
     }
     const devCount = (val) =>{
-        if([...shopCart].find(item=>item._id === val).count>1){
+        if([...shopCart].find(item=>item._id === val).count>1)
+        {
             [...shopCart].find(item=>item._id === val).count-=1
             setShopCart([...shopCart])
         }
     }
+    
     useEffect(() =>{
+       shopCart.length ? (
         setCollect(shopCart
             .map((item)=>item.price*item.count)
             .reduce((a,b)=>a+b)
         )
+        ):(
+           setCollect(initialState)
+        )
+
     },[shopCart])
+
+    //WORKING WITH FORM 
+    const handleChange = (e)=>{
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+    const submitChange = (e)=>{
+        e.preventDefault()
+        getValueForm(formData)
+    }
+    
     return (
         <div className="store-shop">
             <div className="store-shop-cart">
@@ -94,26 +121,38 @@ const ShopCart = () => {
             </div>
             <div className="store-shop-form">
                 <p>Buyurtmalarni junatish uchun quyidagilarni to'ldiring!!</p>
-                <form method="post">
+                <form method="POST" onSubmit={submitChange}>
                     <input 
                         type="text" 
                         placeholder="Ism" 
                         name="firstname"
+                        onChange={handleChange}
+                        minLength="4"
+                        required
                     />
                     <input 
                         type="text" 
                         placeholder="Familiya" 
                         name="lastname"
+                        onChange={handleChange}
+                        minLength="4"
+                        required
                     />
                     <input 
                         type="text" 
                         placeholder="Login" 
                         name="login"
+                        onChange={handleChange}
+                        minLength="4"
+                        required
                     />
                     <input 
                         type="password" 
                         placeholder="Password" 
                         name="password"
+                        onChange={handleChange}
+                        minLength="4"
+                        required
                     />
                     <button className="btn-style">
                       <i className="fa fa-send"></i> 

@@ -2,6 +2,7 @@ import React,{useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import SearchIcon from '@material-ui/icons/Search'
 import {StoreContext} from '../Store/StoreG'
+
 function Main({data}) {
   const {shopCart,setShopCart} = useContext(StoreContext)
 

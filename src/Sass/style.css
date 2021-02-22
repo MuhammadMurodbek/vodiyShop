@@ -415,6 +415,12 @@ ul {
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.02);
   color: #658ec6;
+  -webkit-transition: all ease 0.15s;
+  transition: all ease 0.15s;
+}
+.main-items-box .cost-btn button:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 @media only screen and (max-width: 475px) {
   .main-items li {
@@ -807,6 +813,9 @@ ul {
   width: 96%;
   margin: 0 auto;
 }
+.store-shop-form form button i {
+  margin-right: 10px;
+}
 .store-shop-cart {
   -webkit-box-flex: 3;
       -ms-flex: 3;
@@ -971,6 +980,77 @@ ul {
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.02);
   color: #426696;
+}
+@media only screen and (max-width: 928px) {
+  .store-shop {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .store-shop form button {
+    width: 94%;
+  }
+}
+@media only screen and (max-width: 455px) {
+  .store-shop-cart .title-header h3 {
+    font-size: 0.8rem !important;
+  }
+  .store-shop-cart table th, .store-shop-cart table td, .store-shop-cart table td h5 {
+    font-size: 0.75rem !important;
+  }
+  .store-shop-cart table td img {
+    min-width: 100px !important;
+    margin: 3px !important;
+  }
+  .store-shop-cart table .product-item-second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+    height: 108px !important;
+  }
+  .store-shop-cart .title-footer h3, .store-shop-cart .title-footer button {
+    padding: 5px 8px;
+    font-size: 0.75rem !important;
+  }
+  .store-shop-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px;
+  }
+  .store-shop-form p {
+    width: 200px;
+    height: auto;
+    margin: 0;
+    font-size: 0.7rem;
+  }
+  .store-shop-form input {
+    min-width: 250px !important;
+    margin: 10px 5px !important;
+  }
 }
 
 .footer {
