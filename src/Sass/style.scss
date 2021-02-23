@@ -29,6 +29,26 @@ html{
     width: 100vw;
     overflow-x: hidden;
 }
+button{
+    transition: all 0.15s ease;
+    &:active{
+        transform: scale(1.2);
+    }
+}
+select{
+    @include glass;
+    padding: 4px 15px;
+    border-radius:15px;
+    border:none;
+    outline:none;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all ease 0.4s;
+    &:active{
+        background-color: #1979f7;
+    }
+}
+
 body{
     width: 100vw;
     margin: 0 auto;
@@ -209,11 +229,11 @@ ul{
        }
     }
     .search{
-        @include d-ss;
+        @include d-sa;
         padding: 10px;
         .search-icon{
-            transform: translateX(25px);
-            color: #a86ae6 !important;
+            transform: translate(25px,7px);
+            color: rgb(66, 102, 150,0.8) !important;
         }
         input{
             min-width: 100px;  
@@ -222,15 +242,25 @@ ul{
             padding-left: 30px;
             font-size: 1.1rem;
             font-family: 'Poppins', sans-serif;
-            color: #a86ae6 !important;
+            color: #426696 !important;
             caret-color: #426696;;
             background-color: transparent;
-            border-bottom: 1.9px solid rgba(100, 10, 245, 0.15);
+            border-bottom: 1.5px solid rgb(66, 102, 150,0.6);
         }
         input::placeholder{
-            color: #a86ae6 !important;
+            color: rgb(66, 102, 150,0.6) !important;
+        }
+
+        span:nth-child(2){
+            @include d-sa;
+            h4{
+                padding-right: 5px;
+                margin: 0;
+                font-weight: 400;
+            }
         }
     }
+    
     &-items{
         
         padding: 0 10px;
@@ -295,9 +325,9 @@ ul{
                     border: 1px solid rgba( 255, 255, 255, 0.02 );
                     color:#658ec6;
                     transition: all ease 0.15s;
-                    &:active{
-                        transform: scale(1.2);
-                    }
+                    // &:active{
+                       
+                    // }
                 }
             }
         }
@@ -448,20 +478,6 @@ ul{
             width: 200px;
             height: auto;
             @include d-ss;
-
-            select{
-                @include glass;
-                padding: 4px 15px;
-                border-radius:15px;
-                border:none;
-                outline:none;
-                font-size: 16px;
-                font-family: 'Poppins', sans-serif;
-                transition: all ease 0.4s;
-                &:active{
-                    background-color: #1979f7;
-                }
-            }
         }  
     }
     &-wrapper{
@@ -628,7 +644,22 @@ ul{
             }
 
             tbody{
-               
+                .shopcart-empty{
+                    @include d-ss;
+                    width: 100%;
+                    img{
+                        width: 300px;
+                        height: auto;
+                        margin-left: auto;
+                        object-fit: cover;
+                    }
+                    @media only screen and (max-width:540px){
+                        img{
+                            width: 100% !important;
+                            height: auto;
+                        }
+                    }
+                }
                 .product-item{
                     //table row
                     border-spacing: 14px;

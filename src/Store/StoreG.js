@@ -19,7 +19,7 @@ const StoreG = (props) => {
     },[checkItem])
 
 
-    //ShopCart.js save products to Cart
+    //SHOPCART.JS TO SAVE PRODUCTS IN TO CART
     const shopCartState = JSON.parse(localStorage.getItem('shopCart')) || []
     const [shopCart, setShopCart] = useState(shopCartState)
     useEffect(() =>{
@@ -27,14 +27,22 @@ const StoreG = (props) => {
         localStorage.setItem('shopCart', JSON.stringify(shopCart))
     },[shopCart])
 
+
     //SHOPCART, WORKING WITH FORM 
+    const [checkSendData, setCheckSendData] = useState('READY')
     const getValueForm=(formData)=>{
         const combinedData = {dataForm:{}, dataProduct:[]}
         combinedData.dataForm = formData
         combinedData.dataProduct = [...shopCart]
         axios.post('https://jsonplaceholder.typicode.com/posts',combinedData)
-            .then(response =>console.log(response))
-            .catch(error =>console.log(error))
+            .then(response =>{
+                console.log(response)
+                setCheckSendData('SUCCESS')
+            })
+            .catch(error =>{
+                console.log(error)
+                setCheckSendData('ERROR')
+            })
     }
     return (
         <StoreContext.Provider 
@@ -45,7 +53,8 @@ const StoreG = (props) => {
                     dataChecked,
                     setShopCart,
                     shopCart,
-                    getValueForm
+                    getValueForm,
+                    checkSendData
                 }
             }
         >

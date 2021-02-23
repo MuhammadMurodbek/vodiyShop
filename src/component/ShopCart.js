@@ -5,7 +5,8 @@ import {StoreContext} from '../Store/StoreG'
 const ShopCart = () => {
 
     const initialState = 0
-    const {shopCart, setShopCart, getValueForm} = useContext(StoreContext)
+    const {shopCart, setShopCart, getValueForm, checkSendData} = useContext(StoreContext)
+    const [loader, setLoader] = useState(false)
     const [collect, setCollect] = useState()
     const [formData, setFormData] = useState({
         firstname:'',
@@ -59,7 +60,7 @@ const ShopCart = () => {
             <div className="store-shop-cart">
                 <div className="title-header">
                     <h3>Mahsulotlar savatchasi</h3>
-                    <h3>3 ta mahsulot</h3>
+                    <h3>{shopCart.length} ta mahsulot</h3>
                 </div>
                 <div className="table-wrapper">
                     <table>
@@ -73,38 +74,46 @@ const ShopCart = () => {
                         </thead>
                         <tbody>
                             {
-                                shopCart.map((item,index) =>(
-                                    <tr key={index} className="product-item">
-                                        <td className="product-item-first">
-                                            <div>
-                                                <img src={item.image} alt={item.title}/>
-                                                <span>
-                                                <TextTruncate
-                                                    line={2}
-                                                    element="h5"
-                                                    truncateText="…"
-                                                    text={item.title}
-                                                />
-                                                    <h5>{item.category}</h5>
-                                                    <button 
-                                                        className="btn-style"
-                                                        onClick={()=>{deleteFunc(item._id)}}
-                                                    >
-                                                        <i className="fa fa-trash"></i>
-                                                    </button>
-                                                </span>
-                                            </div>
+                                shopCart.length===0 ? (
+                                    <tr className="shopcart-empty">
+                                        <td>
+                                            <img src="/images/undraw.svg" alt="sadfds"/>
                                         </td>
-                                        <td className="product-item-second">
-                                            <button onClick={()=>{devCount(item._id)}}>-</button>
-                                            <span>{item.count}</span>
-                                            <button onClick={()=>{addCount(item._id)}}>+</button>
-                                        </td>
-                                        <td className="product-item-third">${item.price}</td>
-                                        <td className="product-item-fourth">${item.price*item.count}</td>
                                     </tr>
+                                ):(
+                                    shopCart.map((item,index) =>(
+                                        <tr key={index} className="product-item">
+                                            <td className="product-item-first">
+                                                <div>
+                                                    <img src={item.image} alt={item.title}/>
+                                                    <span>
+                                                    <TextTruncate
+                                                        line={2}
+                                                        element="h5"
+                                                        truncateText="…"
+                                                        text={item.title}
+                                                    />
+                                                        <h5>{item.category}</h5>
+                                                        <button 
+                                                            className="btn-style"
+                                                            onClick={()=>{deleteFunc(item._id)}}
+                                                        >
+                                                            <i className="fa fa-trash"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td className="product-item-second">
+                                                <button onClick={()=>{devCount(item._id)}}>-</button>
+                                                <span>{item.count}</span>
+                                                <button onClick={()=>{addCount(item._id)}}>+</button>
+                                            </td>
+                                            <td className="product-item-third">${item.price}</td>
+                                            <td className="product-item-fourth">${item.price*item.count}</td>
+                                        </tr>
         
-                                ))
+                                    ))
+                                )
                             }
                         
                         </tbody>
@@ -154,10 +163,41 @@ const ShopCart = () => {
                         minLength="4"
                         required
                     />
-                    <button className="btn-style">
-                      <i className="fa fa-send"></i> 
-                      Buyurtmani jo'natish
-                    </button>
+                    
+                    {
+                        checkSendData==='READY' ? (
+                            <button 
+                                className="btn-style"
+                                onClick={() => setLoader(true)}
+                            >
+                               {loader ? (
+                                    <i className="fa fa-spin fa-spinner"></i>
+                                ):(
+                                    <i className="fa fa-send"></i>
+                                )}  
+                                Buyurtmani jo'natish
+                            </button>
+                        ):checkSendData==='SUCCESS' ? (
+                            <button className="btn-style"
+                                style={{color: 'green'}}
+                            >
+                                <i className="fa fa-check" 
+                                    style={{color: 'green'}}
+                                ></i> 
+                                Buyurtmangiz jo'natildi
+                            </button>
+                        ):(
+                            <button className="btn-style"
+                                style={{color: 'red'}}
+                            >
+                                <i className="fa fa-exclamation" 
+                                    style={{color: 'red'}}
+                                ></i> 
+                                Buyurtmangiz jo'natilmadi
+                            </button> 
+                        )
+                    }
+                   
                 </form>
             </div>
         </div>

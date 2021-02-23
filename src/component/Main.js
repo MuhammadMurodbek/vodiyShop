@@ -1,26 +1,71 @@
-import React,{useContext} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import SearchIcon from '@material-ui/icons/Search'
 import {StoreContext} from '../Store/StoreG'
 
 function Main({data}) {
   const {shopCart,setShopCart} = useContext(StoreContext)
-
+  const [searchInfo, setSearchInfo] = useState([])
+  const [inputValue, setInputValue] = useState('')
+  ///SELECT OPTION MENU
+  const [selectValue, setSelectValue] = useState('')
+ 
+  if(selectValue==='cheap'){
+    searchInfo.sort((a,b)=>a.price-b.price)
+  }
+  else if(selectValue==='exp'){
+    searchInfo.sort((a,b)=>b.price-a.price)
+  }
+  
+  ///CHECK PRODUCT ITEM IS EXIST
   const clickChange=(item)=>{
     if(!shopCart.includes(item)){
-      setShopCart(prev=>[...prev,item])}
+      setShopCart(prev=>[...prev,item])
+    }
   }
+
+  ///SEARCH FILTER
+  const inputChange=(e)=>{
+    setInputValue(e)
+  }
+  useEffect(() =>{
+    const newData = data.filter(value=>{
+      if(inputValue=='') 
+        return value
+      else
+        return value.title
+          .toLowerCase()
+          .includes(inputValue.toLocaleLowerCase())
+    })
+    setSearchInfo(newData)
+  },[inputValue])
 
   return (
     <div className="main">
-      <span className="search">
-        <SearchIcon className="search-icon"/>
-        <input type="search" placeholder="Search..."/>
-      </span> 
+
+      <div className="search">
+        <span>
+          <SearchIcon className="search-icon"/>
+          <input 
+            type="search" 
+            value={inputValue}
+            placeholder="Search..."
+            onChange={(e)=>inputChange(e.target.value)}
+          />
+        </span>
+        <span>
+          <h4>Saralash</h4>
+          <select onChange={(e)=>{setSelectValue(e.target.value)}}>
+            <option value="exp">Qimmat</option>
+            <option value="cheap">Arzon</option>
+          </select>
+        </span>
+      </div>
+
       <div className="main-items">
         <ul>
             {
-              data.map((product)=>(
+              searchInfo.map((product)=>(
                 <li key={product._id}>
                   <div className="main-items-box">
                     <span className="main-items-box-img">

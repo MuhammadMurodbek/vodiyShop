@@ -18,7 +18,7 @@ function Navbar() {
             <div className="navbar-part">
                <span className={check ? "navbar-part-info checkNavbarFalse":"navbar-part-info checkNavbarTrue" } >
                     <span className="nav-br-btn">
-                        <a href="#" className="nav-br-btn-link">
+                        <a href="/" className="nav-br-btn-link">
                             <img src="/images/soap.png" alt="ds"/>
                             Vodiy Parfum</a>
                         <button 

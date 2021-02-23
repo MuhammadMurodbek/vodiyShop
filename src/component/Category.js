@@ -43,11 +43,6 @@ const Category = ({setData}) => {
     };
 
     const {checkCategory,dataStore} = useContext(StoreContext)
-   
-    const [selectItem, setSelectItem] = useState('') 
-    useEffect(()=>{
-        console.log(selectItem)
-    },[selectItem])
 
     ///data products
     let products=dataStore
@@ -93,7 +88,9 @@ const Category = ({setData}) => {
 
             <div className="category-items">
                 <h4><i className="fa fa-shopping-basket fa-fw"></i> Mahsulotlar kategoriyasi</h4>
-                <span className="category-items-sort">
+                
+                {/* ********************************************************************** */}
+                {/* <span className="category-items-sort">
                     <h4>Saralash</h4>
                     <select 
                         className="selection" 
@@ -102,7 +99,9 @@ const Category = ({setData}) => {
                         <option value="new">Yangi</option>
                         <option value="old">Eski</option>
                     </select>
-                </span>
+                </span> */}
+                {/* ********************************************************************** */}
+                
             </div>
 
             <ul className="category-wrapper">
