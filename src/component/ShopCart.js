@@ -54,7 +54,15 @@ const ShopCart = () => {
         e.preventDefault()
         getValueForm(formData)
     }
-    
+    const loading = () => {
+        if(
+            !(formData.firstname==='' 
+            && formData.lastname==='' 
+            && formData.login==='' 
+            && formData.password==='')
+        )
+        setLoader(true)
+    }
     return (
         <div className="store-shop">
             <div className="store-shop-cart">
@@ -168,7 +176,7 @@ const ShopCart = () => {
                         checkSendData==='READY' ? (
                             <button 
                                 className="btn-style"
-                                onClick={() => setLoader(true)}
+                                onClick={loading}
                             >
                                {loader ? (
                                     <i className="fa fa-spin fa-spinner"></i>

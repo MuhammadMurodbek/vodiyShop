@@ -282,6 +282,38 @@ ul {
   color: #426696;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
 }
+.main::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -15px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+          box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.8));
+  border-radius: 50%;
+  -webkit-filter: blur(2.5px);
+          filter: blur(2.5px);
+}
+.main::after {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+          box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.8));
+  border-radius: 50%;
+  -webkit-filter: blur(0.5px);
+          filter: blur(0.5px);
+}
 .main-items ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -528,6 +560,22 @@ ul {
   position: absolute;
   bottom: -20px;
   right: 15px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+          box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.8));
+  border-radius: 50%;
+  -webkit-filter: blur(0.5px);
+          filter: blur(0.5px);
+}
+.category::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 10px;
   display: inline-block;
   width: 100px;
   height: 100px;

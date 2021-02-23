@@ -216,6 +216,32 @@ ul{
     padding: 10px;
     box-sizing:border-box;
     @include glass;
+    &::before{
+        content: "";
+        position: absolute;
+        bottom:-20px;
+        right:-15px;
+        display:inline-block;
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+        background:linear-gradient( to left top, rgb(154, 250, 255, 0.2), rgba(255,255,255,0.8));
+        border-radius: 50%;
+        filter:blur(2.5px);
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top:-25px;
+        left:-25px;
+        display:inline-block;
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+        background:linear-gradient( to left top, rgb(154, 250, 255, 0.2), rgba(255,255,255,0.8));
+        border-radius: 50%;
+        filter:blur(.5px);
+    }
     &-items{
        ul{
             display:flex;
@@ -380,6 +406,19 @@ ul{
         position: absolute;
         bottom:-20px;
         right:15px;
+        display:inline-block;
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+        background:linear-gradient( to left top, rgb(154, 250, 255, 0.2), rgba(255,255,255,0.8));
+        border-radius: 50%;
+        filter:blur(.5px);
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top:-20px;
+        left:10px;
         display:inline-block;
         width: 100px;
         height: 100px;
