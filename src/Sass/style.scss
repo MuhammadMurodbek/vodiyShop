@@ -256,6 +256,7 @@ ul{
     }
     .search{
         @include d-sa;
+        flex-wrap: wrap;
         padding: 10px;
         .search-icon{
             transform: translate(25px,7px);
@@ -283,6 +284,26 @@ ul{
                 padding-right: 5px;
                 margin: 0;
                 font-weight: 400;
+            }
+        }
+        @media only screen and (max-width:576px){
+            span{
+                margin: 10px 0;
+                input{
+                    width: 140px;
+                    font-size: 0.9rem;
+                    .search-icon{
+                        font-size: 0.9rem;
+                    }
+                }
+                h4{
+                    display: none;
+                }
+                select{
+                    option{
+                        font-weight:400;
+                    }
+                }
             }
         }
     }
@@ -426,6 +447,13 @@ ul{
         background:linear-gradient( to left top, rgb(154, 250, 255, 0.2), rgba(255,255,255,0.8));
         border-radius: 50%;
         filter:blur(.5px);
+        @media only screen and (max-width:500px){
+            &{
+                width: 70px;
+                height: 70px;
+                left: 0;
+            }
+        }
     }
     .slick-next:before{
        display: none;

@@ -4,9 +4,10 @@ import SearchIcon from '@material-ui/icons/Search'
 import {StoreContext} from '../Store/StoreG'
 
 function Main({data}) {
-  const {shopCart,setShopCart} = useContext(StoreContext)
+  const {clickChange} = useContext(StoreContext)
   const [searchInfo, setSearchInfo] = useState([])
   const [inputValue, setInputValue] = useState('')
+ 
   ///SELECT OPTION MENU
   const [selectValue, setSelectValue] = useState('')
  
@@ -15,13 +16,6 @@ function Main({data}) {
   }
   else if(selectValue==='exp'){
     searchInfo.sort((a,b)=>b.price-a.price)
-  }
-  
-  ///CHECK PRODUCT ITEM IS EXIST
-  const clickChange=(item)=>{
-    if(!shopCart.includes(item)){
-      setShopCart(prev=>[...prev,item])
-    }
   }
 
   ///SEARCH FILTER

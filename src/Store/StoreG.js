@@ -26,8 +26,15 @@ const StoreG = (props) => {
         console.log(shopCart)
         localStorage.setItem('shopCart', JSON.stringify(shopCart))
     },[shopCart])
-
-
+    
+    const clickChange=(item)=>{
+        if(!shopCart.includes(item)){
+            setShopCart(prev=>[...prev,item])
+        }else{
+            [...shopCart].find(val=>item._id === val._id).count+=1
+            setShopCart([...shopCart])
+        }
+    }
     //SHOPCART, WORKING WITH FORM 
     const [checkSendData, setCheckSendData] = useState('READY')
     const getValueForm=(formData)=>{
@@ -54,7 +61,8 @@ const StoreG = (props) => {
                     setShopCart,
                     shopCart,
                     getValueForm,
-                    checkSendData
+                    checkSendData,
+                    clickChange
                 }
             }
         >
