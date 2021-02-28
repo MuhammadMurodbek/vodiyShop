@@ -2,7 +2,7 @@ import React,{useState,useEffect,useContext} from 'react'
 import {StoreContext} from '../Store/StoreG' 
 import {NavLink} from 'react-router-dom'
 import Slider from "react-slick"
-import Data from './Data.json'
+import ScrollAnimation from 'react-animate-on-scroll';
 const Category = ({setData}) => {
 
     const settings = {
@@ -88,36 +88,24 @@ const Category = ({setData}) => {
 
             <div className="category-items">
                 <h4><i className="fa fa-shopping-basket fa-fw"></i> Mahsulotlar kategoriyasi</h4>
-                
-                {/* ********************************************************************** */}
-                {/* <span className="category-items-sort">
-                    <h4>Saralash</h4>
-                    <select 
-                        className="selection" 
-                        onClick={(e)=>{setSelectItem(e.target.value)}}
-                    >
-                        <option value="new">Yangi</option>
-                        <option value="old">Eski</option>
-                    </select>
-                </span> */}
-                {/* ********************************************************************** */}
-                
             </div>
 
             <ul className="category-wrapper">
                 {
                     lastFilter.map((item,index)=>(
                         <li key={index}>
-                             <div className="cat-box-wrapper">
-                                <img src={item.image} alt={item.title}/>
-                                <NavLink 
-                                    to="/products" 
-                                    className="navlink-text"
-                                    onClick={()=>{getDataProduct(item.category)}                                    }
-                                >
-                                    {item.title}
-                                </NavLink>
-                             </div>
+                            <ScrollAnimation animateIn="fadeInUp">
+                                <div className="cat-box-wrapper">
+                                    <img src={item.image} alt={item.title}/>
+                                    <NavLink 
+                                        to="/products" 
+                                        className="navlink-text"
+                                        onClick={()=>{getDataProduct(item.category)}                                    }
+                                    >
+                                        {item.title}
+                                    </NavLink>
+                                </div>
+                            </ScrollAnimation>
                         </li>
                     ))
                 }

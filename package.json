@@ -13,6 +13,7 @@
     "git": "^0.1.5",
     "hamburger-react": "^2.4.0",
     "react": "^17.0.1",
+    "react-animate-on-scroll": "^2.1.5",
     "react-animated-css": "^1.2.1",
     "react-animated-cursor": "^2.1.8",
     "react-awesome-slider": "^4.1.0",
@@ -23,6 +24,7 @@
     "react-scripts": "4.0.2",
     "react-slick": "^0.28.0",
     "react-text-truncate": "^0.16.0",
+    "simple-react-google-maps": "^1.1.2",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.0.1"
   },

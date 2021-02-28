@@ -2,6 +2,7 @@ import React,{useState,useEffect,useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import SearchIcon from '@material-ui/icons/Search'
 import {StoreContext} from '../Store/StoreG'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 function Main({data}) {
   const {clickChange} = useContext(StoreContext)
@@ -61,6 +62,7 @@ function Main({data}) {
             {
               searchInfo.map((product)=>(
                 <li key={product._id}>
+                  <ScrollAnimation animateIn="fadeInUp">
                   <div className="main-items-box">
                     <span className="main-items-box-img">
                       <img src={product.image} alt={product.name}/>
@@ -83,6 +85,7 @@ function Main({data}) {
                       </span>
                     </span>
                   </div>
+                  </ScrollAnimation>
                 </li>
               ))
             }

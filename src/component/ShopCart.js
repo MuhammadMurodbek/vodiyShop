@@ -1,7 +1,7 @@
 import React,{useState,useEffect,useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import {StoreContext} from '../Store/StoreG'
-
+import ScrollAnimation from 'react-animate-on-scroll';
 const ShopCart = () => {
 
     const initialState = 0
@@ -92,6 +92,7 @@ const ShopCart = () => {
                                     shopCart.map((item,index) =>(
                                         <tr key={index} className="product-item">
                                             <td className="product-item-first">
+                                               
                                                 <div>
                                                     <img src={item.image} alt={item.title}/>
                                                     <span>
@@ -110,6 +111,7 @@ const ShopCart = () => {
                                                         </button>
                                                     </span>
                                                 </div>
+                                                
                                             </td>
                                             <td className="product-item-second">
                                                 <button onClick={()=>{devCount(item._id)}}>-</button>
@@ -137,8 +139,11 @@ const ShopCart = () => {
                 </div>
             </div>
             <div className="store-shop-form">
-                <p>Buyurtmalarni junatish uchun quyidagilarni to'ldiring!!</p>
+                <ScrollAnimation animateIn="fadeInDown">
+                    <p>Buyurtmalarni junatish uchun quyidagilarni to'ldiring!!</p>
+                </ScrollAnimation>
                 <form method="POST" onSubmit={submitChange}>
+                <ScrollAnimation animateIn="fadeInUp">
                     <input 
                         type="text" 
                         placeholder="Ism" 
@@ -171,7 +176,7 @@ const ShopCart = () => {
                         minLength="4"
                         required
                     />
-                    
+                   
                     {
                         checkSendData==='READY' ? (
                             <button 
@@ -187,25 +192,25 @@ const ShopCart = () => {
                             </button>
                         ):checkSendData==='SUCCESS' ? (
                             <button className="btn-style"
-                                style={{color: 'green'}}
+                                style={{color: 'darkgreen'}}
                             >
                                 <i className="fa fa-check" 
-                                    style={{color: 'green'}}
+                                    style={{color: 'darkgreen'}}
                                 ></i> 
                                 Buyurtmangiz jo'natildi
                             </button>
                         ):(
                             <button className="btn-style"
-                                style={{color: 'red'}}
+                                style={{color: 'darkred'}}
                             >
                                 <i className="fa fa-exclamation" 
-                                    style={{color: 'red'}}
+                                    style={{color: 'darkred'}}
                                 ></i> 
                                 Buyurtmangiz jo'natilmadi
                             </button> 
                         )
                     }
-                   
+                    </ScrollAnimation>
                 </form>
             </div>
         </div>

@@ -1,5 +1,6 @@
 * {
   outline: none;
+  color: #a372d1;
 }
 
 html {
@@ -16,16 +17,33 @@ button:active {
           transform: scale(1.2);
 }
 
+.btn-style {
+  margin-top: 20px;
+  padding: 7px 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+  outline: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.45);
+  -webkit-box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
+          box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(55px);
+  -webkit-backdrop-filter: blur(55px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
 select {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   padding: 4px 15px;
   border-radius: 15px;
@@ -47,11 +65,8 @@ body {
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  color: #426696;
-  background-color: #67ded1;
-  background-size: 400% 400%;
-  -webkit-animation: gradient 15s ease infinite;
-          animation: gradient 15s ease infinite;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1f4f9), to(#dff1ff));
+  background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
 }
 
 body::-webkit-scrollbar {
@@ -92,6 +107,7 @@ body::-webkit-scrollbar-thumb {
 a {
   display: inline-block;
   text-decoration: none;
+  color: #a372d1;
 }
 
 ul {
@@ -102,23 +118,23 @@ ul {
 
 .navbar {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
+  position: relative;
   width: 95%;
   height: auto;
-  margin: 10px auto;
+  margin: 20px auto 10px;
   padding: 8px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.4)));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+  z-index: 3;
 }
 .navbar-part {
   display: -webkit-box;
@@ -164,9 +180,6 @@ ul {
   width: 40px;
   height: auto;
 }
-.navbar-part-info a {
-  color: #a86ae6 !important;
-}
 .navbar-part-info .nav-btn {
   display: none;
 }
@@ -185,7 +198,6 @@ ul {
 }
 .navbar-part-info .nav-list li {
   margin: 0 10px;
-  color: #333 !important;
 }
 .navbar-part .checkNavbarTrue {
   height: auto !important;
@@ -208,7 +220,6 @@ ul {
     padding-top: 3px;
     border: none;
     outline: none;
-    color: #fff;
     cursor: pointer;
     background-color: transparent !important;
   }
@@ -223,7 +234,6 @@ ul {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    color: #426696;
   }
   .navbar-part-info .nav-br-btn-link {
     -webkit-transform: translateY(0);
@@ -247,14 +257,14 @@ ul {
 }
 .navbar-part-shop .MuiIconButton-root {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   background: rgba(193, 214, 214, 0.2) !important;
   border-radius: 30%;
@@ -265,22 +275,68 @@ ul {
           transform: translateX(-2px);
 }
 
+.fon-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.back-fon {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-filter: blur(180px);
+          filter: blur(180px);
+  z-index: 0;
+}
+
+.top-max-fon {
+  top: 0;
+  width: 75%;
+  height: 500px;
+  background-color: #e9a9de;
+}
+
+.top-min-fon {
+  top: 0;
+  width: 35%;
+  height: 500px;
+  background-color: #88e7ee;
+}
+
+.bottom-max-fon {
+  bottom: 0;
+  width: 80%;
+  height: 300px;
+  background-color: #fffd87;
+}
+
+.bottom-min-fon {
+  bottom: 0;
+  width: 50%;
+  height: 300px;
+  background-color: #00d2ff;
+}
+
 .main {
+  position: relative;
   width: 95%;
   margin: 30px auto 0;
   padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
+  z-index: 5;
 }
 .main::before {
   content: "";
@@ -292,27 +348,36 @@ ul {
   height: 100px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.8)));
-  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.8));
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.8));
   border-radius: 50%;
-  -webkit-filter: blur(2.5px);
-          filter: blur(2.5px);
+  -webkit-filter: blur(0.5px);
+          filter: blur(0.5px);
 }
 .main::after {
   content: "";
   position: absolute;
-  top: -25px;
-  left: -25px;
+  top: -20px;
+  left: -20px;
   display: inline-block;
   width: 100px;
   height: 100px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.8)));
-  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.8));
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.8));
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
   border-radius: 50%;
   -webkit-filter: blur(0.5px);
           filter: blur(0.5px);
+}
+@media only screen and (max-width: 500px) {
+  .main::after {
+    width: 70px;
+    height: 70px;
+    left: 0;
+  }
 }
 .main-items ul {
   display: -webkit-box;
@@ -358,8 +423,6 @@ ul {
   padding-left: 30px;
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;
-  color: #426696 !important;
-  caret-color: #426696;
   background-color: transparent;
   border-bottom: 1.5px solid rgba(66, 102, 150, 0.6);
 }
@@ -417,14 +480,14 @@ ul {
 }
 .main-items-box {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -436,13 +499,18 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 350px;
-  min-width: 250px;
+  min-width: 200px;
   height: auto;
   padding: 0 10px;
   margin: 10px 0;
   clear: both;
 }
-.main-items-box img {
+.main-items-box-img {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.main-items-box-img img {
   position: relative;
   width: 100%;
   height: 200px;
@@ -453,13 +521,9 @@ ul {
   -webkit-transition: all ease 0.4s;
   transition: all ease 0.4s;
 }
-.main-items-box img:hover {
+.main-items-box-img img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-}
-.main-items-box-img {
-  border-radius: 20px;
-  overflow: hidden;
 }
 .main-items-box-text {
   display: -webkit-box;
@@ -513,7 +577,6 @@ ul {
   -webkit-backdrop-filter: blur(55px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.02);
-  color: #658ec6;
   -webkit-transition: all ease 0.15s;
   transition: all ease 0.15s;
 }
@@ -547,21 +610,21 @@ ul {
         -ms-flex-pack: center;
             justify-content: center;
     background: white;
-    background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
     -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
             box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
     -webkit-backdrop-filter: blur(1rem);
             backdrop-filter: blur(1rem);
     border-radius: 20px;
-    color: #426696;
+    color: #a372d1;
     border: 1.2px solid rgba(255, 255, 255, 0.15);
     z-index: 5;
   }
 }
 @media only screen and (max-width: 854px) {
   .main-items-box {
-    width: 80%;
+    min-width: 80%;
     margin: 10px auto;
   }
   .main-items-box-img {
@@ -574,6 +637,7 @@ ul {
   height: auto;
   position: relative;
   text-align: center;
+  z-index: 5;
 }
 .category::before {
   content: "";
@@ -601,8 +665,10 @@ ul {
   height: 100px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.8)));
-  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.8));
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.8));
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
   border-radius: 50%;
   -webkit-filter: blur(0.5px);
           filter: blur(0.5px);
@@ -622,14 +688,14 @@ ul {
 }
 .category-slick {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   width: 95%;
   margin: 30px auto;
@@ -648,7 +714,6 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: 400;
-  color: #9d31fe !important;
 }
 .category-slick h2 img {
   width: 45px;
@@ -710,14 +775,14 @@ ul {
 }
 .category-items {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -731,8 +796,6 @@ ul {
       flex-wrap: wrap;
   width: 95%;
   margin: 30px auto 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.4)));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
   -webkit-backdrop-filter: blur(0.3rem) !important;
           backdrop-filter: blur(0.3rem) !important;
 }
@@ -742,7 +805,6 @@ ul {
   font-weight: 500;
 }
 .category-items h4 i, .category-items h5 i {
-  color: #3f9ee1;
   font-size: 1.3rem;
   margin-right: 5px;
 }
@@ -761,14 +823,14 @@ ul {
 }
 .category-wrapper {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -792,17 +854,15 @@ ul {
 }
 .category-wrapper li .cat-box-wrapper {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1))) !important;
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) !important;
   width: 300px;
   height: auto;
   padding: 10px;
@@ -828,17 +888,15 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
-  background: -webkit-gradient(linear, left bottom, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.7))) !important;
-  background: linear-gradient(to right top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.7)) !important;
   height: auto;
   -webkit-transition: all ease 0.4s;
   transition: all ease 0.4s;
@@ -856,15 +914,16 @@ ul {
   }
 }
 .store-shop {
+  position: relative;
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -872,6 +931,7 @@ ul {
   width: 95%;
   height: auto;
   margin: 30px auto 0;
+  z-index: 5;
 }
 .store-shop-form {
   -webkit-box-flex: 1;
@@ -879,7 +939,7 @@ ul {
           flex: 1;
   padding: 20px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
 }
 .store-shop-form p {
@@ -1018,7 +1078,7 @@ ul {
 .store-shop-cart table tbody .product-item td {
   font-weight: 400;
   font-size: 0.9rem;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .store-shop-cart table tbody .product-item .product-item-first {
   border-radius: 20px 0 0 20px;
@@ -1059,7 +1119,6 @@ ul {
   background-color: transparent;
   font-size: 1rem;
   font-weight: bold;
-  color: #426696;
   cursor: pointer;
 }
 .store-shop-cart table tbody .product-item .product-item-fourth {
@@ -1083,23 +1142,6 @@ ul {
   margin: 0;
   -webkit-transform: translateY(10px);
           transform: translateY(10px);
-}
-.store-shop .btn-style {
-  margin-top: 20px;
-  padding: 7px 16px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 0.88rem;
-  outline: none;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.45);
-  -webkit-box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
-          box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
-  backdrop-filter: blur(55px);
-  -webkit-backdrop-filter: blur(55px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.02);
-  color: #426696;
 }
 @media only screen and (max-width: 928px) {
   .store-shop {
@@ -1173,7 +1215,151 @@ ul {
   }
 }
 
+.about {
+  background: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
+          box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  border-radius: 20px;
+  color: #a372d1;
+  border: 1.2px solid rgba(255, 255, 255, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+  min-height: 80vh;
+  padding: 10px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 6;
+  margin-top: 30px;
+}
+.about-text {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 10px;
+  padding-left: 20px;
+  margin: 0 auto;
+}
+.about-text h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.about-text p {
+  font-size: 14.4px;
+  font-weight: 400;
+}
+.about-text button i {
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+.about-text button:hover i {
+  -webkit-transform: rotateZ(30deg);
+          transform: rotateZ(30deg);
+}
+.about-image {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  text-align: center;
+}
+.about-image img {
+  width: 80%;
+}
+@media only screen and (max-width: 800px) {
+  .about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.connect {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.connect-text {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.connect-text h3, .connect-text h4 {
+  margin: 0;
+  padding: 0;
+}
+.connect-text h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.connect-text .info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.connect-text .info-wrapper h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.connect-text .info-wrapper h4 img {
+  width: 30px;
+  height: 30px;
+}
+.connect-image {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  text-align: center;
+}
+.connect-image img {
+  width: 80%;
+  height: 80%;
+}
+@media only screen and (max-width: 800px) {
+  .connect {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
 .footer {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1184,17 +1370,16 @@ ul {
   padding: 10px;
   margin: 30px auto;
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.6)));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  z-index: 5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1212,7 +1397,7 @@ ul {
   width: 60%;
   height: 2px;
   border-radius: 20px;
-  background-color: #0b6db3;
+  background-color: #9f5fdb;
 }
 .footer p {
   font-size: 0.9rem;
@@ -1234,14 +1419,14 @@ ul {
 }
 .footer-about span a {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   border-radius: 20px;
-  color: #426696;
+  color: #a372d1;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
   padding: 5px 8px;
   border-radius: 12px;

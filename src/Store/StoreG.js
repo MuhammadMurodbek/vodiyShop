@@ -18,7 +18,6 @@ const StoreG = (props) => {
         }
     },[checkItem])
 
-
     //SHOPCART.JS TO SAVE PRODUCTS IN TO CART
     const shopCartState = JSON.parse(localStorage.getItem('shopCart')) || []
     const [shopCart, setShopCart] = useState(shopCartState)

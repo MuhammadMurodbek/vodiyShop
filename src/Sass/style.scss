@@ -15,15 +15,16 @@
 }
 @mixin glass{
     background:white;
-    background:linear-gradient( to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+    background:linear-gradient( to bottom, rgba(255,255,255,0.3),rgba(255,255,255,0.1));
     box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
     backdrop-filter: blur(1rem );
     border-radius: 20px;
-    color:#426696;
+    color:#a372d1;
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
 *{
     outline: none;
+    color:#a372d1;
 }
 html{
     width: 100vw;
@@ -34,6 +35,21 @@ button{
     &:active{
         transform: scale(1.2);
     }
+}
+.btn-style{
+    margin-top: 20px;
+    padding: 7px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size:0.88rem;
+    outline:none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 1px 32px 0 rgba( 31, 38, 135, 0.1 );
+    backdrop-filter: blur( 55px );
+    -webkit-backdrop-filter: blur( 55px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.02 );
 }
 select{
     @include glass;
@@ -56,12 +72,7 @@ body{
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    // background:linear-gradient(to right top, #65dfc9,#6cdbeb);
-    color:#426696;
-    background-color: #67ded1;
-    // background: linear-gradient(-45deg, #aaf1e1 , #8de0ff , #99effa, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+    background:linear-gradient(to bottom, #f1f4f9,#dff1ff);
 }
 
 body::-webkit-scrollbar {
@@ -94,25 +105,29 @@ body::-webkit-scrollbar {
     border-radius:20px;
     outline:none;
 }
+
 a{
     display: inline-block;
     text-decoration: none;
+    color:#a372d1;
 }
 ul{
     padding: 0;
     margin: 0;
     list-style-type: none;
 }
+
 //NAVBAR
 
 .navbar{
     @include glass;
+    position: relative;
     width: 95%;
     height: auto;
-    margin: 10px auto;
+    margin: 20px auto 10px;
     padding: 8px 0;
     box-sizing:border-box;
-    background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.4 ));
+    z-index: 3;
     &-part{
         display:flex;
         justify-content:space-between;
@@ -140,9 +155,7 @@ ul{
                     }
                 }
             }
-            a{  
-                color: #a86ae6 !important;
-            }
+            
             .nav-btn{
                 display:none;
             }
@@ -152,7 +165,7 @@ ul{
                 flex-wrap: wrap;
                 li{
                     margin: 0 10px;
-                    color: #333 !important;
+                    // color: #a372d1 !important;
                 }
             }
         }
@@ -172,14 +185,12 @@ ul{
                     padding-top: 3px;
                     border:none;
                     outline: none;
-                    color:#fff;
                     cursor:pointer;
                     background-color:transparent !important;
                 }
                 .nav-br-btn{
                     width: 100%;
                     @include d-sb;
-                    color:#426696;
                     &-link{
                         transform:translateY(0);
                     }
@@ -209,13 +220,55 @@ ul{
         }
     }
 }
+
+.fon-wrapper{
+    position: relative;
+    width:100%;
+    height: 100%;
+}
+
+.back-fon{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    filter:blur(180px);
+    z-index: 0;
+}
+.top-max-fon{
+    top:0;
+    width: 75%;
+    height: 500px;
+    background-color:#e9a9de;
+}
+.top-min-fon{
+    top:0;
+    width: 35%;
+    height: 500px;
+    background-color:#88e7ee;
+}
+.bottom-max-fon{
+    bottom:0;
+    width: 80%;
+    height: 300px;
+    background-color:#fffd87;
+}
+.bottom-min-fon{
+    bottom:0;
+    width: 50%;
+    height: 300px;
+    background-color:#00d2ff;
+}
+
+
 ///main
 .main{
+    position: relative;
     width: 95%;
     margin: 30px auto 0;
     padding: 10px;
     box-sizing:border-box;
     @include glass;
+    z-index: 5;
     &::before{
         content: "";
         position: absolute;
@@ -225,22 +278,30 @@ ul{
         width: 100px;
         height: 100px;
         box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-        background:linear-gradient( to left top, rgb(154, 250, 255, 0.2), rgba(255,255,255,0.8));
+        background:linear-gradient( to left top, rgb(92 96 123 / 10%), rgba(255,255,255,0.8));
         border-radius: 50%;
-        filter:blur(2.5px);
+        filter:blur(.5px);
     }
     &::after{
         content: "";
         position: absolute;
-        top:-25px;
-        left:-25px;
+        top:-20px;
+        left:-20px;
         display:inline-block;
         width: 100px;
         height: 100px;
         box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-        background:linear-gradient( to left top, rgb(154, 250, 255, 0.2), rgba(255,255,255,0.8));
+        background:linear-gradient( to left top, rgb(92 96 123 / 10%), rgba(255,255,255,0.8));
+        backdrop-filter: blur(0.1rem);
         border-radius: 50%;
         filter:blur(.5px);
+        @media only screen and (max-width:500px){
+            &{
+                width: 70px;
+                height: 70px;
+                left: 0;
+            }
+        }
     }
     &-items{
        ul{
@@ -269,8 +330,8 @@ ul{
             padding-left: 30px;
             font-size: 1.1rem;
             font-family: 'Poppins', sans-serif;
-            color: #426696 !important;
-            caret-color: #426696;;
+            // color: #426696 !important;
+            // caret-color: #;
             background-color: transparent;
             border-bottom: 1.5px solid rgb(66, 102, 150,0.6);
         }
@@ -309,33 +370,34 @@ ul{
     }
     
     &-items{
-        
         padding: 0 10px;
         margin-top: 50px;
         &-box{
             @include glass;
             @include d-sb;
             width: 350px;
-            min-width:250px;
+            min-width:200px;
             height: auto;
             padding: 0 10px;
             margin: 10px 0;
             clear:both;
-            img{
-                position: relative;
-                width: 100%;
-                height: 200px;
-                vertical-align: middle;
-                object-fit: cover;
-                z-index: 13;
-                transition: all ease 0.4s;
-                &:hover{
-                    transform: scale(1.1);
-                }
-            }
+            
             &-img{
+                width: 100%;
                 border-radius:20px;
                 overflow: hidden;
+                img{
+                    position: relative;
+                    width: 100%;
+                    height: 200px;
+                    vertical-align: middle;
+                    object-fit: cover;
+                    z-index: 13;
+                    transition: all ease 0.4s;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
             }
             &-text{
                 display:flex;
@@ -370,11 +432,9 @@ ul{
                     -webkit-backdrop-filter: blur( 55px );
                     border-radius: 15px;
                     border: 1px solid rgba( 255, 255, 255, 0.02 );
-                    color:#658ec6;
+                
                     transition: all ease 0.15s;
-                    // &:active{
-                       
-                    // }
+                   
                 }
             }
         }
@@ -404,7 +464,7 @@ ul{
         }
         @media only screen and (max-width: 854px) {
             &-box{
-                width:80%;
+                min-width:80%;
                 margin: 10px auto;
                 &-img{
                     width: 60%;
@@ -422,6 +482,7 @@ ul{
     height: auto;
     position: relative;
     text-align: center;
+    z-index: 5;
     &::before{
         content: "";
         position: absolute;
@@ -444,7 +505,8 @@ ul{
         width: 100px;
         height: 100px;
         box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-        background:linear-gradient( to left top, rgb(154, 250, 255, 0.2), rgba(255,255,255,0.8));
+        background:linear-gradient( to left top, rgb(92 96 123 / 10%), rgba(255,255,255,0.8));
+        backdrop-filter: blur(0.1rem);
         border-radius: 50%;
         filter:blur(.5px);
         @media only screen and (max-width:500px){
@@ -467,11 +529,9 @@ ul{
         margin: 30px auto;
         padding: 10px;
         box-sizing:border-box;
-        // background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.6 ));
         h2{
             @include d-ss;
             font-weight: 400;
-            color: #9d31fe!important;
             img{
                 width:45px;
                 margin-right: 10px;
@@ -529,14 +589,13 @@ ul{
         flex-wrap: wrap;
         width: 95%;
         margin: 30px auto 0;
-        background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.4 ));
+        // background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.4 ));
         backdrop-filter: blur(0.3rem) !important;
         h4,h5{
             margin: 20px 10px;
             padding: 0;
             font-weight: 500;
             i{
-                color: #3f9ee1;
                 font-size:1.3rem;
                 margin-right: 5px;
             }
@@ -560,8 +619,7 @@ ul{
             
             .cat-box-wrapper{
                 @include glass;
-                background:linear-gradient( to right bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.1)) !important;
-                width: 300px;
+                 width: 300px;
                 height:auto;
                 padding: 10px;
                 overflow: hidden;
@@ -578,7 +636,6 @@ ul{
                     padding: 10px;
                     @include d-ss;
                     @include glass;
-                    background:linear-gradient( to right top, rgba(255,255,255,0.4), rgba(255,255,255,0.7)) !important;
                     height: auto;
                     transition: all ease 0.4s;
                     &:hover{
@@ -601,16 +658,18 @@ ul{
 
 // SHOPPING CART 
 .store-shop{
+    position: relative;
     @include glass;
     display:flex;
     width: 95%;
     height: auto;
     margin: 30px auto 0;
+    z-index: 5;
     &-form{
         flex:1;
         padding: 20px;
         border-radius:20px;
-        background-color:rgba(255,255,255,0.6);
+        background-color:rgba(255,255,255,0.5);
         text-align: center;
         p{
             margin: 10px 0;
@@ -733,7 +792,7 @@ ul{
                     td{
                         font-weight: 400;
                         font-size: 0.9rem;
-                        background-color:rgba(255,255,255,0.6);
+                        background-color:rgba(255,255,255,0.5);
                     }
                     .product-item-first{
                         border-radius: 20px 0 0 20px;
@@ -766,7 +825,6 @@ ul{
                             background-color:transparent;
                             font-size: 1rem;
                             font-weight: bold;
-                            color: #426696;
                             cursor:pointer;
                         }
                     }
@@ -791,22 +849,7 @@ ul{
     }
 
     //common styles for /Shopping cart
-   .btn-style{
-    margin-top: 20px;
-    padding: 7px 16px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size:0.88rem;
-    outline:none;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 1px 32px 0 rgba( 31, 38, 135, 0.1 );
-    backdrop-filter: blur( 55px );
-    -webkit-backdrop-filter: blur( 55px );
-    border-radius: 15px;
-    border: 1px solid rgba( 255, 255, 255, 0.02 );
-    color:#426696;
-   }
+   
    @media only screen and (max-width:928px){
        &{
            flex-wrap: wrap;
@@ -875,17 +918,107 @@ ul{
 }
 //!product-part
  
+//ABOUT PAGE
+.about{
+    @include glass;
+    @include d-sb;
+    flex-wrap:wrap;
+    width: 95%;
+    min-height: 80vh;
+    padding: 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    z-index: 6;
+    margin-top: 30px;
+    &-text{
+        flex:2;
+        padding: 10px;
+        padding-left: 20px;
+        margin: 0 auto;
+        
+        h3{
+          font-size:1.1rem;
+          font-weight: 600;
+        }
+        p{
+            font-size: 14.4px;
+            font-weight: 400;
+        }
+        button i{
+            transition: all ease 0.2s;
+        }
+        button:hover i{
+            transform: rotateZ(30deg);
+        }
+        
+    }
+    &-image{
+        flex:3;
+        text-align: center;
+        img{
+            width: 80%;
+        }
+    }
+    @media only screen and (max-width:800px){
+        &{
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+//CONNECTIONS
+.connect{
+    flex-direction: row-reverse;
+    &-text{
+        flex:2;
+        flex-direction: column;
+        h3,h4{
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            font-size:1.1rem;
+            font-weight: 600;
+        }
+        .info-wrapper{
+            @include d-sb;
+            h4{
+                @include d-ss;
+                font-size:0.9rem;
+                font-weight: 400;
+                img{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+    &-image{
+        flex:3;
+        text-align: center;
+        img{
+            width: 80%;
+            height: 80%;
+        }
+    }
+    @media only screen and (max-width:800px){
+        &{
+            flex-direction: column-reverse;
+        }
+    }
+}
 
 //Footer *********************************
 
 .footer{
+    position: relative;
     display:flex;
     justify-content:center;
     width: 95%;
     padding: 10px;
     margin: 30px auto;
     @include glass;
-    background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.6 ));
+    z-index: 5;
     box-sizing: border-box;
     h3{
         position: relative;
@@ -900,7 +1033,7 @@ ul{
             width: 60%;
             height: 2px;
             border-radius: 20px;
-            background-color:#0b6db3;
+            background-color:#9f5fdb;
         }
     }
     p{
