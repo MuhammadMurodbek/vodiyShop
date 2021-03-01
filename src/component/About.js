@@ -1,7 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {NavLink} from 'react-router-dom'
 import {Animated} from "react-animated-css";
 const About = () => {
+    useEffect(() =>{
+        document.title="VodiyParfum | Biz haqimizda"
+    },[])
     return (
         <div className="about">
            <div className="about-text">

@@ -1,9 +1,13 @@
-import React,{useState,useEffect,useContext} from 'react'
+import React,{useEffect,useContext} from 'react'
 import {StoreContext} from '../Store/StoreG' 
 import {NavLink} from 'react-router-dom'
 import Slider from "react-slick"
 import ScrollAnimation from 'react-animate-on-scroll';
 const Category = ({setData}) => {
+
+    useEffect(() =>{
+        document.title="VodiyParfum | Asosiy"
+    },[])
 
     const settings = {
         autoplay:true,

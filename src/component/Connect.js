@@ -1,6 +1,9 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Map from './Map'
 const Connect = () => {
+    useEffect(() =>{
+        document.title="VodiyParfum | Aloqa"
+    },[])
     return (
         <div className="connect about">
             <div className="connect-text">

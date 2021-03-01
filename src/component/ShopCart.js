@@ -4,6 +4,10 @@ import {StoreContext} from '../Store/StoreG'
 import ScrollAnimation from 'react-animate-on-scroll';
 const ShopCart = () => {
 
+    useEffect(() =>{
+        document.title="VodiyParfum | Savatcha"
+    },[])
+
     const initialState = 0
     const {shopCart, setShopCart, getValueForm, checkSendData} = useContext(StoreContext)
     const [loader, setLoader] = useState(false)

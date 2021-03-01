@@ -14,19 +14,19 @@
     justify-content: center;
 }
 @mixin glass{
-    background:white;
     background:linear-gradient( to bottom, rgba(255,255,255,0.3),rgba(255,255,255,0.1));
     box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
     backdrop-filter: blur(1rem );
     border-radius: 20px;
-    color:#a372d1;
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
 *{
     outline: none;
     color:#a372d1;
+    font-family: 'Poppins', sans-serif;
 }
 html{
+    box-sizing:border-box;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -39,7 +39,6 @@ button{
 .btn-style{
     margin-top: 20px;
     padding: 7px 16px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size:0.88rem;
     outline:none;
@@ -52,26 +51,71 @@ button{
     border: 1px solid rgba( 255, 255, 255, 0.02 );
 }
 select{
-    @include glass;
     padding: 4px 15px;
     border-radius:15px;
     border:none;
     outline:none;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
     transition: all ease 0.4s;
     &:active{
         background-color: #1979f7;
     }
 }
 
+//CLASSES USE GLASS EFFECT
+select,
+.MuiIconButton-root,
+.navbar,
+.main,
+.main-items-box,
+.navlink-text,
+.category-slick,
+.category-items,
+.category-wrapper,
+.cat-box-wrapper,
+.store-shop,
+.about,
+.footer,
+.footer-about-span a{
+    @include glass;
+}
+
+//CLASSES USE D-FLEX-SS
+.category-title,
+.category-wrapper,
+.navlink-text,
+.shopcart-empty,
+.info-wrapper h4{
+    @include d-ss;
+}
+//CLASSES ARE USING D-FLEX-SB
+.navbar-part-info,
+.nav-br-btn,
+.main-items-box,
+.cost-btn,
+.title-header,
+.title-footer,
+.about,
+.info-wrapper{
+    @include d-sb;
+}
+//CLASSES ARE USING D-FLEX-SA
+.navbar .nav-list,
+.main .search,
+.category .items,
+.product-item-first div,
+.footer-about span{
+    @include d-sa;
+}
+
+
 body{
+    box-sizing:border-box;
     width: 100vw;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     background:linear-gradient(to bottom, #f1f4f9,#dff1ff);
 }
 
@@ -120,7 +164,6 @@ ul{
 //NAVBAR
 
 .navbar{
-    @include glass;
     position: relative;
     width: 95%;
     height: auto;
@@ -135,7 +178,6 @@ ul{
         height: auto;
         position: relative;
         &-info{
-            @include d-sb;
             width: 100%;
             padding: 10px;
             transition: all ease 1s;
@@ -160,12 +202,10 @@ ul{
                 display:none;
             }
             .nav-list{
-                @include d-sa;
                 display:flex;
                 flex-wrap: wrap;
                 li{
                     margin: 0 10px;
-                    // color: #a372d1 !important;
                 }
             }
         }
@@ -190,7 +230,6 @@ ul{
                 }
                 .nav-br-btn{
                     width: 100%;
-                    @include d-sb;
                     &-link{
                         transform:translateY(0);
                     }
@@ -209,7 +248,7 @@ ul{
             margin-right: 10px;
             color: #fff !important;
             .MuiIconButton-root{
-                @include glass;
+                // @include glass;
                 background: rgba(193, 214, 214, 0.2) !important;
                 border-radius: 30%;
             }
@@ -231,26 +270,26 @@ ul{
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    filter:blur(180px);
+    filter:blur(140px);
     z-index: 0;
 }
 .top-max-fon{
     top:0;
     width: 75%;
     height: 500px;
-    background-color:#e9a9de;
+    background-color:#0ff0ca;
 }
 .top-min-fon{
     top:0;
-    width: 35%;
-    height: 500px;
-    background-color:#88e7ee;
+    width: 45%;
+    height: 300px;
+    background-color:#faa6f6;
 }
 .bottom-max-fon{
     bottom:0;
     width: 80%;
     height: 300px;
-    background-color:#fffd87;
+    background-color:#faf74b;
 }
 .bottom-min-fon{
     bottom:0;
@@ -267,7 +306,6 @@ ul{
     margin: 30px auto 0;
     padding: 10px;
     box-sizing:border-box;
-    @include glass;
     z-index: 5;
     &::before{
         content: "";
@@ -316,7 +354,6 @@ ul{
        }
     }
     .search{
-        @include d-sa;
         flex-wrap: wrap;
         padding: 10px;
         .search-icon{
@@ -330,8 +367,6 @@ ul{
             padding-left: 30px;
             font-size: 1.1rem;
             font-family: 'Poppins', sans-serif;
-            // color: #426696 !important;
-            // caret-color: #;
             background-color: transparent;
             border-bottom: 1.5px solid rgb(66, 102, 150,0.6);
         }
@@ -373,8 +408,6 @@ ul{
         padding: 0 10px;
         margin-top: 50px;
         &-box{
-            @include glass;
-            @include d-sb;
             width: 350px;
             min-width:200px;
             height: auto;
@@ -413,7 +446,6 @@ ul{
                 padding: 2px 5px;
             }
             .cost-btn{
-                @include d-sb;
                 flex-direction: row;
                 margin: 15px 0 2px;
                 padding: 0 10px;
@@ -422,7 +454,6 @@ ul{
                 }
                 button{
                     padding: 10px 30px;
-                    font-family: 'Poppins', sans-serif;
                     font-weight: bold;
                     outline:none;
                     cursor: pointer;
@@ -457,7 +488,6 @@ ul{
                     padding: 0;
                     margin-top: 10px;
                     justify-content: center;
-                    @include glass;
                     z-index: 5;
                 }
             }
@@ -524,13 +554,11 @@ ul{
        display:none;
     }
     &-slick{
-        @include glass;
         width: 95%;
         margin: 30px auto;
         padding: 10px;
         box-sizing:border-box;
         h2{
-            @include d-ss;
             font-weight: 400;
             img{
                 width:45px;
@@ -584,12 +612,9 @@ ul{
         }
     }
     &-items{
-        @include glass;
-        @include d-sa;
         flex-wrap: wrap;
         width: 95%;
         margin: 30px auto 0;
-        // background:linear-gradient( to bottom, rgba(255,255,255,0.9),rgba(255,255,255,0.4 ));
         backdrop-filter: blur(0.3rem) !important;
         h4,h5{
             margin: 20px 10px;
@@ -607,8 +632,6 @@ ul{
         }  
     }
     &-wrapper{
-        @include glass;
-        @include d-ss;
         width: 95%;
         margin: 10px auto 30px;
         flex-wrap: wrap;
@@ -618,8 +641,9 @@ ul{
             padding: 10px;
             
             .cat-box-wrapper{
-                @include glass;
-                 width: 300px;
+                // @include glass;
+                max-width: 300px;
+                min-width: 180px;
                 height:auto;
                 padding: 10px;
                 overflow: hidden;
@@ -634,8 +658,7 @@ ul{
             
                 .navlink-text{
                     padding: 10px;
-                    @include d-ss;
-                    @include glass;
+                    // @include glass;
                     height: auto;
                     transition: all ease 0.4s;
                     &:hover{
@@ -659,7 +682,6 @@ ul{
 // SHOPPING CART 
 .store-shop{
     position: relative;
-    @include glass;
     display:flex;
     width: 95%;
     height: auto;
@@ -685,7 +707,6 @@ ul{
                 border:none;
                 border-radius: 13px;
                 outline:none;
-                font-family: 'Poppins',sans-serif;
             }
             button{
                 width: 96%;
@@ -702,7 +723,6 @@ ul{
         flex:3;
         padding: 0 20px;
         .title-header{
-            @include d-sb;
             padding: 10px 0;
             margin-bottom: 10px;
             border-bottom: 1px solid #fff;
@@ -771,7 +791,6 @@ ul{
 
             tbody{
                 .shopcart-empty{
-                    @include d-ss;
                     width: 100%;
                     img{
                         width: 300px;
@@ -797,7 +816,6 @@ ul{
                     .product-item-first{
                         border-radius: 20px 0 0 20px;
                         div{
-                            @include d-sa;
                             justify-content:left;
                             img{
                                 width: 100px;
@@ -837,7 +855,6 @@ ul{
             
         }
         .title-footer{
-            @include d-sb;
             margin-top: 10px;
             padding: 10px 0;
             border-top: 1px solid #fff;
@@ -885,6 +902,7 @@ ul{
                     @include d-sb;
                     flex-direction: column-reverse !important;
                     height: 108px !important;
+                    background-color:red;
                 }
                 
             }
@@ -898,10 +916,9 @@ ul{
         }
 
         &-form{
-           @include d-ss;
-           flex-direction: column;
+            @include d-sb;
+           flex-direction: column; 
            padding: 5px;
-           
            p{
                width: 200px;
                height: auto;
@@ -920,8 +937,6 @@ ul{
  
 //ABOUT PAGE
 .about{
-    @include glass;
-    @include d-sb;
     flex-wrap:wrap;
     width: 95%;
     min-height: 80vh;
@@ -981,9 +996,7 @@ ul{
             font-weight: 600;
         }
         .info-wrapper{
-            @include d-sb;
             h4{
-                @include d-ss;
                 font-size:0.9rem;
                 font-weight: 400;
                 img{
@@ -1014,10 +1027,10 @@ ul{
     position: relative;
     display:flex;
     justify-content:center;
+    flex-wrap: wrap;
     width: 95%;
     padding: 10px;
     margin: 30px auto;
-    @include glass;
     z-index: 5;
     box-sizing: border-box;
     h3{
@@ -1025,30 +1038,18 @@ ul{
         display:inline-block;
         font-size: 16px;
         font-weight: 400;
-        &::after{
-            position: absolute;
-            bottom:0;
-            left: 0;
-            content:"";
-            width: 60%;
-            height: 2px;
-            border-radius: 20px;
-            background-color:#9f5fdb;
-        }
     }
     p{
         font-size: 0.9rem;
     }
     div{
-        width: 400px;
         padding: 10px;
+        flex:1;
     }
     &-about{
         span{
             width: 60%;
-            @include d-sa;
             a{
-                @include glass;
                 padding: 5px 8px;
                 border-radius: 12px;
                 box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
@@ -1069,7 +1070,23 @@ ul{
     }
     @media only screen and (max-width:740px){
         &{
-            flex-wrap: wrap;
+            flex-direction:column;
+            p{
+                width: 100%;
+                margin: 0;
+            }
+
+            .footer-about,
+            .footer-contact,
+            .footer-news{
+                text-align: left;
+                width: 100%;
+                overflow-x: hidden;
+                .animated{
+                    width: 80% !important;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 }

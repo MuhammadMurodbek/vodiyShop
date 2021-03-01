@@ -21,6 +21,9 @@ const App = () => {
     localStorage.setItem('newApp', JSON.stringify(data))
   },[data])
 
+  useEffect(() =>{
+    document.title="VodiyParfum"
+  },[])
   return (
     <StoreG>
       <Router>

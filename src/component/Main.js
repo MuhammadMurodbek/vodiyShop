@@ -5,6 +5,11 @@ import {StoreContext} from '../Store/StoreG'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 function Main({data}) {
+
+  useEffect(() =>{
+    document.title="VodiyParfum | Mahsulotlar"
+  },[])
+
   const {clickChange} = useContext(StoreContext)
   const [searchInfo, setSearchInfo] = useState([])
   const [inputValue, setInputValue] = useState('')
@@ -37,7 +42,6 @@ function Main({data}) {
 
   return (
     <div className="main">
-
       <div className="search">
         <span>
           <SearchIcon className="search-icon"/>
