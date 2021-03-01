@@ -27,8 +27,8 @@
 }
 html{
     box-sizing:border-box;
-    width: 100vw;
-    overflow-x: hidden;
+    // width: 100%;
+    overflow-x: hidden !important;
 }
 button{
     transition: all 0.15s ease;
@@ -111,10 +111,10 @@ select,
 
 body{
     box-sizing:border-box;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
     overflow-x: hidden !important;
     background:linear-gradient(to bottom, #f1f4f9,#dff1ff);
 }
@@ -408,8 +408,8 @@ ul{
         padding: 0 10px;
         margin-top: 50px;
         &-box{
-            width: 350px;
-            min-width:200px;
+            max-width: 380px;
+            min-width:250px;
             height: auto;
             padding: 0 10px;
             margin: 10px 0;
@@ -1017,6 +1017,12 @@ ul{
     @media only screen and (max-width:800px){
         &{
             flex-direction: column-reverse;
+        }
+        .connect-text{
+            text-align: center;
+        }
+        .info-wrapper{
+            flex-direction: column;
         }
     }
 }

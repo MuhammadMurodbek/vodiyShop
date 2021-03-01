@@ -7,8 +7,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 100vw;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 button {
@@ -126,10 +125,9 @@ select,
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   overflow-x: hidden !important;
   background: -webkit-gradient(linear, left top, left bottom, from(#f1f4f9), to(#dff1ff));
   background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
@@ -483,8 +481,8 @@ ul {
   margin-top: 50px;
 }
 .main-items-box {
-  width: 350px;
-  min-width: 200px;
+  max-width: 380px;
+  min-width: 250px;
   height: auto;
   padding: 0 10px;
   margin: 10px 0;
@@ -1152,6 +1150,15 @@ ul {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+  .connect .connect-text {
+    text-align: center;
+  }
+  .connect .info-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 

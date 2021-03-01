@@ -33,7 +33,8 @@ const Connect = () => {
                         </div>
                     </div>
                     <div className="map-wrapper">
-                        <Map/>
+                        {/* <Map/> */}
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, possimus ea atque doloremque amet dolor velit, vitae ipsum veritatis quis repudiandae quae a nostrum, similique odit. In exercitationem laborum quibusdam.</p>
                     </div>
                 </div>
             </div>
