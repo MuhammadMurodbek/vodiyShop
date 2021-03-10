@@ -3,6 +3,7 @@ import TextTruncate from 'react-text-truncate';
 import SearchIcon from '@material-ui/icons/Search'
 import {StoreContext} from '../Store/StoreG'
 import ScrollAnimation from 'react-animate-on-scroll';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function Main({data}) {
 
@@ -73,7 +74,13 @@ function Main({data}) {
                   <ScrollAnimation animateIn="fadeInUp">
                   <div className="main-items-box">
                     <span className="main-items-box-img">
-                      <img src={product.image} alt={product.name}/>
+                      <LazyLoadImage
+                        src={product.image} 
+                        alt={product.name}
+                        width="100%"
+                        height="200px"
+                        effect="blur"
+                      />
                     </span>
                     <span className="main-items-box-text">
                       <h5>{product.title}</h5>

@@ -3,6 +3,7 @@ import {StoreContext} from '../Store/StoreG'
 import {NavLink} from 'react-router-dom'
 import Slider from "react-slick"
 import ScrollAnimation from 'react-animate-on-scroll';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Category = ({setData}) => {
 
     useEffect(() =>{
@@ -100,7 +101,14 @@ const Category = ({setData}) => {
                         <li key={index}>
                             <ScrollAnimation animateIn="fadeInUp">
                                 <div className="cat-box-wrapper">
-                                    <img src={item.image} alt={item.title}/>
+                                    
+                                    <LazyLoadImage
+                                        effect="blur"
+                                        src={item.image} 
+                                        alt={item.title}
+                                        width="100%"
+                                        height="200px"
+                                    />
                                     <NavLink 
                                         to="/products" 
                                         className="navlink-text"
