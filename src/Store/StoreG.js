@@ -29,10 +29,11 @@ const StoreG = (props) => {
     const clickChange=(item)=>{
         if(!shopCart.includes(item)){
             setShopCart(prev=>[...prev,item])
-        }else{
-            [...shopCart].find(val=>item._id === val._id).count+=1
-            setShopCart([...shopCart])
         }
+        // else{
+        //     [...shopCart].find(val=>item._id === val._id).count+=1
+        //     setShopCart([...shopCart])
+        // }
     }
     //SHOPCART, WORKING WITH FORM 
     const [checkSendData, setCheckSendData] = useState('READY')

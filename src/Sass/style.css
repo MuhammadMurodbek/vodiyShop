@@ -26,7 +26,7 @@ button:active {
   font-size: 0.88rem;
   outline: none;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
           box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
   backdrop-filter: blur(55px);
@@ -66,8 +66,8 @@ select,
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1.5rem);
+          backdrop-filter: blur(1.5rem);
   border-radius: 20px;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
 }
@@ -219,17 +219,12 @@ ul {
 }
 .navbar-part-info .nav-br-btn-link {
   position: relative;
-  padding-left: 50px;
-  color: #c19ae7 !important;
+  padding-left: 10px;
+  color: #fff !important;
   -webkit-transform: translateY(10px);
           transform: translateY(10px);
-}
-.navbar-part-info .nav-br-btn-link img {
-  position: absolute;
-  top: -10px;
-  left: 5px;
-  width: 40px;
-  height: auto;
+  font-family: "Flavors", "Poppins", sans-serif;
+  font-size: 1.4rem;
 }
 .navbar-part-info .nav-btn {
   display: none;
@@ -378,7 +373,7 @@ ul {
 .main .search .search-icon {
   -webkit-transform: translate(25px, 7px);
           transform: translate(25px, 7px);
-  color: rgba(66, 102, 150, 0.8) !important;
+  color: #fff;
 }
 .main .search input {
   min-width: 100px;
@@ -388,22 +383,22 @@ ul {
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;
   background-color: transparent;
-  border-bottom: 1.5px solid rgba(66, 102, 150, 0.6);
+  border-bottom: 1.9px solid #fff;
 }
 .main .search input::-webkit-input-placeholder {
-  color: rgba(66, 102, 150, 0.6) !important;
+  color: #fff !important;
 }
 .main .search input::-moz-placeholder {
-  color: rgba(66, 102, 150, 0.6) !important;
+  color: #fff !important;
 }
 .main .search input:-ms-input-placeholder {
-  color: rgba(66, 102, 150, 0.6) !important;
+  color: #fff !important;
 }
 .main .search input::-ms-input-placeholder {
-  color: rgba(66, 102, 150, 0.6) !important;
+  color: #fff !important;
 }
 .main .search input::placeholder {
-  color: rgba(66, 102, 150, 0.6) !important;
+  color: #fff !important;
 }
 .main .search span:nth-child(2) {
   display: -webkit-box;
@@ -462,13 +457,8 @@ ul {
   vertical-align: middle;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 20px;
   z-index: 13;
-  -webkit-transition: all ease 0.4s;
-  transition: all ease 0.4s;
-}
-.main-items-box-img img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 .main-items-box-text {
   display: -webkit-box;
@@ -916,8 +906,8 @@ ul {
   font-weight: 400;
   font-size: 14.4px;
 }
-.store-shop-cart table tbody .product-item .product-item-first div button {
-  color: #e25050;
+.store-shop-cart table tbody .product-item .product-item-first div i {
+  color: #456;
 }
 .store-shop-cart table tbody .product-item .product-item-second button {
   padding: 10px;

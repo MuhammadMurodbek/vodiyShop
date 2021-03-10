@@ -16,7 +16,7 @@
 @mixin glass{
     background:linear-gradient( to bottom, rgba(255,255,255,0.3),rgba(255,255,255,0.1));
     box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
-    backdrop-filter: blur(1rem );
+    backdrop-filter: blur(1.5rem );
     border-radius: 20px;
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
@@ -44,7 +44,7 @@ button{
     font-size:0.88rem;
     outline:none;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 1px 32px 0 rgba( 31, 38, 135, 0.1 );
     backdrop-filter: blur( 55px );
     -webkit-backdrop-filter: blur( 55px );
@@ -118,8 +118,6 @@ body{
     scroll-behavior: smooth;
     overflow-x: hidden !important;
     background:linear-gradient(to bottom, #f1f4f9,#dff1ff);
-    // background-image: url('https://previews.123rf.com/images/nosua/nosua1702/nosua170200233/72605962-home-appliances-in-the-shopping-cart-e-commerce-or-online-shopping-concept-breack-background-3d-rend.jpg');
-    // background-image: url('https://image.freepik.com/free-vector/molecules-technology-with-polygonal-shapes-dark-blue-futuristic-background_115579-1003.jpg');
     background-image: url('https://cdn.wallpapersafari.com/3/93/juGSXV.jpg');
     background-attachment: fixed;
     background-size: cover;
@@ -196,16 +194,11 @@ ul{
                 transform: translateY(-10px);
                 &-link{
                     position: relative;
-                    padding-left: 50px;
-                    color:#c19ae7 !important;
+                    padding-left: 10px;
+                    color:#fff !important;
                     transform:translateY(10px);
-                    img{
-                        position: absolute;
-                        top:-10px;
-                        left:5px;
-                        width: 40px;
-                        height: auto;
-                    }
+                    font-family: 'Flavors', 'Poppins', sans-serif;
+                    font-size: 1.4rem;
                 }
             }
             
@@ -271,45 +264,6 @@ ul{
     }
 }
 
-// .fon-wrapper{
-//     position: relative;
-//     width:100%;
-//     height: 100%;
-// }
-
-// .back-fon{
-//     position: absolute;
-//     left:50%;
-//     transform: translateX(-50%);
-//     filter:blur(140px);
-//     z-index: 0;
-// }
-// .top-max-fon{
-//     top:0;
-//     width: 75%;
-//     height: 500px;
-//     background-color:#0ff0ca;
-// }
-// .top-min-fon{
-//     top:0;
-//     width: 45%;
-//     height: 300px;
-//     background-color:#faa6f6;
-// }
-// .bottom-max-fon{
-//     bottom:0;
-//     width: 80%;
-//     height: 300px;
-//     background-color:#faf74b;
-// }
-// .bottom-min-fon{
-//     bottom:0;
-//     width: 50%;
-//     height: 300px;
-//     background-color:#00d2ff;
-// }
-
-
 ///main
 .main{
     position: relative;
@@ -369,7 +323,7 @@ ul{
         padding: 10px;
         .search-icon{
             transform: translate(25px,7px);
-            color: rgb(66, 102, 150,0.8) !important;
+            color: #fff;
         }
         input{
             min-width: 100px;  
@@ -379,10 +333,10 @@ ul{
             font-size: 1.1rem;
             font-family: 'Poppins', sans-serif;
             background-color: transparent;
-            border-bottom: 1.5px solid rgb(66, 102, 150,0.6);
+            border-bottom: 1.9px solid #fff;
         }
         input::placeholder{
-            color: rgb(66, 102, 150,0.6) !important;
+            color: #fff !important;
         }
 
         span:nth-child(2){
@@ -436,11 +390,8 @@ ul{
                     height: 200px;
                     vertical-align: middle;
                     object-fit: cover;
+                    border-radius:20px;
                     z-index: 13;
-                    transition: all ease 0.4s;
-                    &:hover{
-                        transform: scale(1.1);
-                    }
                 }
             }
             &-text{
@@ -843,9 +794,10 @@ ul{
                                 font-weight: 400;
                                 font-size: 14.4px;
                             }
-                            button{
-                                color:rgb(226, 80, 80);
+                            i{
+                                color:#456;
                             }
+
                         }
                     }
 

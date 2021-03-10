@@ -142,7 +142,13 @@ const ShopCart = () => {
                     </table>
                 </div>
                 <div className="title-footer">
-                    <button className="btn-style"><i className="fa fa-circle"></i> Savatchani tozalash</button>
+                    <button 
+                        className="btn-style"
+                        onClick={()=>setShopCart([])}
+                    >
+                        <i className="fa fa-circle"></i> 
+                        Savatchani tozalash
+                    </button>
                     <h3 
                         className="btn-style"
                     >
