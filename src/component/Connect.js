@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import Map from './Map'
+// import Map from './Map'
 const Connect = () => {
     useEffect(() =>{
         document.title="VodiyParfum | Aloqa"

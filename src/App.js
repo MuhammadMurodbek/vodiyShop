@@ -25,6 +25,7 @@ const App = () => {
     document.title="VodiyParfum"
   },[])
   return (
+    <>
     <StoreG>
       <Router>
         <Navbar/>
@@ -48,6 +49,7 @@ const App = () => {
         <Footer/>
       </Router>
     </StoreG>
+    </>
   );
 }
 

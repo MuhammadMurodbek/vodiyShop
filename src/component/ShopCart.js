@@ -11,6 +11,7 @@ const ShopCart = () => {
     const initialState = 0
     const {shopCart, setShopCart, getValueForm, checkSendData} = useContext(StoreContext)
     const [loader, setLoader] = useState(false)
+    const [productError, setProductError] = useState(false)
     const [collect, setCollect] = useState()
     const [formData, setFormData] = useState({
         firstname:'',
@@ -56,14 +57,21 @@ const ShopCart = () => {
     }
     const submitChange = (e)=>{
         e.preventDefault()
-        getValueForm(formData)
+        if(loader){
+            getValueForm(formData)
+        }else{
+            setProductError(true)
+        }
     }
     const loading = () => {
         if(
-            !(formData.firstname==='' 
-            && formData.lastname==='' 
-            && formData.login==='' 
-            && formData.password==='')
+            !(
+                formData.firstname==='' 
+                && formData.lastname==='' 
+                && formData.login==='' 
+                && formData.password===''
+            )
+            && shopCart.length
         )
         setLoader(true)
     }
@@ -165,11 +173,11 @@ const ShopCart = () => {
                         required
                     />
                     <input 
-                        type="text" 
-                        placeholder="Login" 
+                        type="number" 
+                        placeholder="Telefon raqam" 
                         name="login"
                         onChange={handleChange}
-                        minLength="4"
+                        minLength="7"
                         required
                     />
                     <input 
@@ -186,6 +194,7 @@ const ShopCart = () => {
                             <button 
                                 className="btn-style"
                                 onClick={loading}
+                                style={{color:'rgba(0,0,0,0.5)'}}
                             >
                                {loader ? (
                                     <i className="fa fa-spin fa-spinner"></i>
@@ -216,6 +225,14 @@ const ShopCart = () => {
                     }
                     </ScrollAnimation>
                 </form>
+                {
+                    productError ? 
+                        (
+                            <h5 style={{color:'red'}}>
+                                Mahsulot tanlanmadi !!!
+                            </h5>
+                        ):null
+                }
             </div>
         </div>
     )

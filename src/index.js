@@ -6,15 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="fon-wrapper">
-      <div className="back-fon top-max-fon"></div>
-      <div className="back-fon top-min-fon"></div>
-    </div>
     <App />
-    <div className="fon-wrapper">
-      <div className="back-fon bottom-max-fon"></div>
-      <div className="back-fon bottom-min-fon"></div>
-    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

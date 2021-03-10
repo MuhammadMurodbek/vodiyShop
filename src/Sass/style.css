@@ -1,6 +1,6 @@
 * {
   outline: none;
-  color: #a372d1;
+  color: #fff;
   font-family: "Poppins", sans-serif;
 }
 
@@ -15,8 +15,8 @@ button {
   transition: all 0.15s ease;
 }
 button:active {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .btn-style {
@@ -26,7 +26,7 @@ button:active {
   font-size: 0.88rem;
   outline: none;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.65);
   -webkit-box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
           box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
   backdrop-filter: blur(55px);
@@ -128,9 +128,15 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   overflow-x: hidden !important;
   background: -webkit-gradient(linear, left top, left bottom, from(#f1f4f9), to(#dff1ff));
   background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+  background-image: url("https://cdn.wallpapersafari.com/3/93/juGSXV.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 body::-webkit-scrollbar {
@@ -171,7 +177,7 @@ body::-webkit-scrollbar-thumb {
 a {
   display: inline-block;
   text-decoration: none;
-  color: #a372d1;
+  color: #fff;
 }
 
 ul {
@@ -295,50 +301,6 @@ ul {
           transform: translateX(-2px);
 }
 
-.fon-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.back-fon {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  -webkit-filter: blur(140px);
-          filter: blur(140px);
-  z-index: 0;
-}
-
-.top-max-fon {
-  top: 0;
-  width: 75%;
-  height: 500px;
-  background-color: #0ff0ca;
-}
-
-.top-min-fon {
-  top: 0;
-  width: 45%;
-  height: 300px;
-  background-color: #faa6f6;
-}
-
-.bottom-max-fon {
-  bottom: 0;
-  width: 80%;
-  height: 300px;
-  background-color: #faf74b;
-}
-
-.bottom-min-fon {
-  bottom: 0;
-  width: 50%;
-  height: 300px;
-  background-color: #00d2ff;
-}
-
 .main {
   position: relative;
   width: 95%;
@@ -358,9 +320,9 @@ ul {
   height: 100px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.8)));
-  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.8));
-  border-radius: 50%;
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.5));
+  border-radius: 20px;
   -webkit-filter: blur(0.5px);
           filter: blur(0.5px);
 }
@@ -371,14 +333,14 @@ ul {
   left: -20px;
   display: inline-block;
   width: 100px;
-  height: 100px;
+  height: 80px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.8)));
-  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.8));
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.4));
   -webkit-backdrop-filter: blur(0.1rem);
           backdrop-filter: blur(0.1rem);
-  border-radius: 50%;
+  border-radius: 20px;
   -webkit-filter: blur(0.5px);
           filter: blur(0.5px);
 }
@@ -609,12 +571,12 @@ ul {
   right: 15px;
   display: inline-block;
   width: 100px;
-  height: 100px;
+  height: 80px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.8)));
-  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.8));
-  border-radius: 50%;
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(154, 250, 255, 0.2)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to left top, rgba(154, 250, 255, 0.2), rgba(255, 255, 255, 0.4));
+  border-radius: 20px;
   -webkit-filter: blur(0.5px);
           filter: blur(0.5px);
 }
@@ -625,14 +587,14 @@ ul {
   left: 10px;
   display: inline-block;
   width: 100px;
-  height: 100px;
+  height: 80px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
-  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.8)));
-  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.8));
+  background: -webkit-gradient(linear, right bottom, left top, from(rgba(92, 96, 123, 0.1)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to left top, rgba(92, 96, 123, 0.1), rgba(255, 255, 255, 0.4));
   -webkit-backdrop-filter: blur(0.1rem);
           backdrop-filter: blur(0.1rem);
-  border-radius: 50%;
+  border-radius: 20px;
   -webkit-filter: blur(0.5px);
           filter: blur(0.5px);
 }
@@ -831,6 +793,7 @@ ul {
   border: none;
   border-radius: 13px;
   outline: none;
+  color: rgba(0, 0, 0, 0.5);
 }
 .store-shop-form form button {
   width: 96%;
@@ -838,6 +801,7 @@ ul {
 }
 .store-shop-form form button i {
   margin-right: 10px;
+  color: rgba(0, 0, 0, 0.5);
 }
 .store-shop-cart {
   -webkit-box-flex: 3;
@@ -1199,9 +1163,10 @@ ul {
 }
 .footer-about span a {
   padding: 5px 8px;
-  border-radius: 12px;
+  border-radius: 8px;
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .footer-about span a .fa-telegram {
   color: #426696;

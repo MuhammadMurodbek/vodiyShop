@@ -40,6 +40,10 @@ function Main({data}) {
     setSearchInfo(newData)
   },[inputValue])
 
+  const handleChangeCLick = (product) =>{
+    clickChange(product)
+  }
+
   return (
     <div className="main">
       <div className="search">
@@ -82,7 +86,7 @@ function Main({data}) {
                       <span className="cost-btn">
                         <h5>${product.price}</h5>
                         <button 
-                          onClick={() => clickChange(product)}
+                          onClick={() => handleChangeCLick(product)}
                         >
                           Add
                         </button>
