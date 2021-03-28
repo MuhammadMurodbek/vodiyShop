@@ -1,7 +1,9 @@
 import React,{useState,useEffect,useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import {StoreContext} from '../Store/StoreG'
+import FadeIn from 'react-fade-in';
 import ScrollAnimation from 'react-animate-on-scroll';
+import SimpleModal from './Modalbtn';
 const ShopCart = () => {
 
     useEffect(() =>{
@@ -142,13 +144,16 @@ const ShopCart = () => {
                     </table>
                 </div>
                 <div className="title-footer">
-                    <button 
+                    {/* ************************* */}
+                    {/* <button 
                         className="btn-style"
                         onClick={()=>setShopCart([])}
                     >
                         <i className="fa fa-circle"></i> 
                         Savatchani tozalash
-                    </button>
+                    </button> */}
+                    <SimpleModal/>
+                    {/* ************************** */}
                     <h3 
                         className="btn-style"
                     >
@@ -157,9 +162,9 @@ const ShopCart = () => {
                 </div>
             </div>
             <div className="store-shop-form">
-                <ScrollAnimation animateIn="fadeInDown">
+                <FadeIn>
                     <p>Buyurtmalarni junatish uchun quyidagilarni to'ldiring!!</p>
-                </ScrollAnimation>
+                </FadeIn>
                 <form method="POST" onSubmit={submitChange}>
                 <ScrollAnimation animateIn="fadeInUp">
                     <input 

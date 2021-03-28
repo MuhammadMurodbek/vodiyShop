@@ -2,6 +2,7 @@ import React,{useEffect,useContext} from 'react'
 import {StoreContext} from '../Store/StoreG' 
 import {NavLink} from 'react-router-dom'
 import Slider from "react-slick"
+import FadeIn from 'react-fade-in';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Category = ({setData}) => {
@@ -99,7 +100,7 @@ const Category = ({setData}) => {
                 {
                     lastFilter.map((item,index)=>(
                         <li key={index}>
-                            <ScrollAnimation animateIn="fadeInUp">
+                            <FadeIn>
                                 <div className="cat-box-wrapper">
                                     
                                     <LazyLoadImage
@@ -117,7 +118,7 @@ const Category = ({setData}) => {
                                         {item.title}
                                     </NavLink>
                                 </div>
-                            </ScrollAnimation>
+                            </FadeIn>
                         </li>
                     ))
                 }

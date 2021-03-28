@@ -1,9 +1,10 @@
 import React,{useState,useEffect,useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
-import SearchIcon from '@material-ui/icons/Search'
+import FadeIn from 'react-fade-in';
 import {StoreContext} from '../Store/StoreG'
-import ScrollAnimation from 'react-animate-on-scroll';
+// import SearchIcon from '@material-ui/icons/Search';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import SnackBar from 'react-material-snackbar';
 
 function Main({data}) {
 
@@ -49,7 +50,7 @@ function Main({data}) {
     <div className="main">
       <div className="search">
         <span>
-          <SearchIcon className="search-icon"/>
+          {/* <SearchIcon className="search-icon"/> */}
           <input 
             type="search" 
             value={inputValue}
@@ -71,41 +72,42 @@ function Main({data}) {
             {
               searchInfo.map((product)=>(
                 <li key={product._id}>
-                  <ScrollAnimation animateIn="fadeInUp">
-                  <div className="main-items-box">
-                    <span className="main-items-box-img">
-                      <LazyLoadImage
-                        src={product.image} 
-                        alt={product.name}
-                        width="100%"
-                        height="200px"
-                        effect="blur"
-                      />
-                    </span>
-                    <span className="main-items-box-text">
-                      <h5>{product.title}</h5>
-                      <TextTruncate
-                        line={1}
-                        element="h5"
-                        truncateText="…"
-                        text={product.description}
-                      />
-                      <span className="cost-btn">
-                        <h5>${product.price}</h5>
-                        <button 
-                          onClick={() => handleChangeCLick(product)}
-                        >
-                          Add
-                        </button>
+                  <FadeIn > 
+                    <div className="main-items-box">
+                      <span className="main-items-box-img">
+                        <LazyLoadImage
+                          src={product.image} 
+                          alt={product.name}
+                          width="100%"
+                          height="200px"
+                          effect="blur"
+                        />
                       </span>
-                    </span>
-                  </div>
-                  </ScrollAnimation>
+                      <span className="main-items-box-text">
+                        <h5>{product.title}</h5>
+                        <TextTruncate
+                          line={1}
+                          element="h5"
+                          truncateText="…"
+                          text={product.description}
+                        />
+                        <span className="cost-btn">
+                          <h5>${product.price}</h5>
+                          <button 
+                            onClick={() => handleChangeCLick(product)}
+                          >
+                            Add
+                          </button>
+                        </span>
+                      </span>
+                    </div>
+                  </FadeIn>
                 </li>
               ))
             }
         </ul>
       </div>
+      
     </div>
   )
 }

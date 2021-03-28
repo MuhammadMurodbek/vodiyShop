@@ -12,6 +12,7 @@ import Main from './component/Main'
 import ShopCart from './component/ShopCart'
 import About from './component/About';
 import Connect from './component/Connect';
+import CustomizedSnackbars from './component/Snackbar'
 
 const App = () => {
   
@@ -47,6 +48,7 @@ const App = () => {
           </Route>
         </Switch>
         <Footer/>
+        <CustomizedSnackbars/>
       </Router>
     </StoreG>
     </>
