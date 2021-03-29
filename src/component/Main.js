@@ -12,7 +12,7 @@ function Main({data}) {
     document.title="VodiyParfum | Mahsulotlar"
   },[])
 
-  const {clickChange} = useContext(StoreContext)
+  const {clickChange, setSnackbarCheck} = useContext(StoreContext)
   const [searchInfo, setSearchInfo] = useState([])
   const [inputValue, setInputValue] = useState('')
  
@@ -44,6 +44,7 @@ function Main({data}) {
 
   const handleChangeCLick = (product) =>{
     clickChange(product)
+    setSnackbarCheck(true)
   }
 
   return (
@@ -51,6 +52,9 @@ function Main({data}) {
       <div className="search">
         <span>
           {/* <SearchIcon className="search-icon"/> */}
+          <div className="search-icon">
+            <i className="fa fa-search"></i>
+          </div>
           <input 
             type="search" 
             value={inputValue}

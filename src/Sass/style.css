@@ -60,6 +60,7 @@ select,
 .cat-box-wrapper,
 .store-shop,
 .about,
+.snackbar,
 .footer,
 .footer-about-span a {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
@@ -353,8 +354,9 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -371,8 +373,9 @@ ul {
   padding: 10px;
 }
 .main .search .search-icon {
-  -webkit-transform: translate(25px, 7px);
-          transform: translate(25px, 7px);
+  display: inline-block;
+  -webkit-transform: translate(20px, -1px);
+          transform: translate(20px, -1px);
   color: #fff;
 }
 .main .search input {
@@ -431,6 +434,7 @@ ul {
   }
   .main .search span select option {
     font-weight: 400;
+    color: #333;
   }
 }
 .main-items {
@@ -1194,4 +1198,23 @@ ul {
     width: 80% !important;
     margin: 0 auto;
   }
+}
+
+.snackbar {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: rgba(93, 235, 95, 0.7);
+  text-align: center;
+  color: #fff;
+  z-index: 100;
+}
+.snackbar .fa-check {
+  position: absolute;
+  left: 20px;
 }/*# sourceMappingURL=style.css.map */

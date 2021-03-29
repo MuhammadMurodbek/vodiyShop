@@ -74,6 +74,7 @@ select,
 .cat-box-wrapper,
 .store-shop,
 .about,
+.snackbar,
 .footer,
 .footer-about-span a{
     @include glass;
@@ -308,7 +309,7 @@ ul{
        ul{
             display:flex;
             align-items:center;
-            justify-content: space-around;
+            justify-content: center;
             flex-direction:row;
             flex-wrap: wrap;
             li{
@@ -320,7 +321,8 @@ ul{
         flex-wrap: wrap;
         padding: 10px;
         .search-icon{
-            transform: translate(25px,7px);
+            display: inline-block;
+            transform: translate(20px,-1px);
             color: #fff;
         }
         input{
@@ -361,6 +363,7 @@ ul{
                 select{
                     option{
                         font-weight:400;
+                        color:#333;
                     }
                 }
             }
@@ -1059,5 +1062,22 @@ ul{
                 }
             }
         }
+    }
+}
+.snackbar{
+    position:fixed;
+    bottom: 10px;
+    left: 50%;
+    width: 300px;
+    padding: 10px;
+    border-radius:10px;
+    transform: translateX(-50%);
+    background-color: rgba(93, 235, 95, 0.7);
+    text-align: center;
+    color:#fff;
+    z-index: 100;
+    .fa-check{
+        position: absolute;
+        left: 20px;
     }
 }
