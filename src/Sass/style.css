@@ -434,7 +434,7 @@ ul {
   }
   .main .search span select option {
     font-weight: 400;
-    color: #333;
+    color: #333 !important;
   }
 }
 .main-items {

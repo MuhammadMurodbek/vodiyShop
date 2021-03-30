@@ -65,8 +65,8 @@ function Main({data}) {
         <span>
           <h4>Saralash</h4>
           <select onChange={(e)=>{setSelectValue(e.target.value)}}>
-            <option value="exp">Qimmat</option>
-            <option value="cheap">Arzon</option>
+            <option style={{color:"#333"}} value="exp">Qimmat</option>
+            <option style={{color:"#333"}} value="cheap">Arzon</option>
           </select>
         </span>
       </div>
