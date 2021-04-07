@@ -37,12 +37,15 @@ button:active {
 
 select {
   padding: 4px 15px;
-  border-radius: 15px;
+  border-radius: 12px;
   border: none;
   outline: none;
   font-size: 16px;
   -webkit-transition: all ease 0.4s;
   transition: all ease 0.4s;
+}
+select option {
+  border-radius: 20px;
 }
 select:active {
   background-color: #1979f7;
@@ -739,6 +742,34 @@ ul {
 .category-wrapper li .cat-box-wrapper .navlink-text:hover {
   -webkit-box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.2);
+}
+.category .MuiChip-label, .category .MuiSvgIcon-root, .category .MuiChip-deleteIcon {
+  color: #333;
+}
+.category .MuiAutocomplete-root {
+  margin: 20px auto;
+  border: none;
+  outline: none !important;
+  color: #fff !important;
+}
+.category .MuiAutocomplete-root .MuiInputLabel-root.MuiInputLabel-formControl {
+  color: #fff;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+.category .MuiAutocomplete-root .PrivateNotchedOutline-root-1,
+.category .MuiAutocomplete-root .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #ccc;
+  outline: none;
+}
+@media only screen and (max-width: 665px) {
+  .category .MuiAutocomplete-root {
+    width: 75% !important;
+  }
+  .category .MuiAutocomplete-root .MuiInputLabel-root.MuiInputLabel-formControl {
+    font-size: 14px !important;
+  }
 }
 
 @media only screen and (max-width: 424px) {

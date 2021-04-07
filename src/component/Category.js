@@ -3,7 +3,7 @@ import {StoreContext} from '../Store/StoreG'
 import {NavLink} from 'react-router-dom'
 import Slider from "react-slick"
 import FadeIn from 'react-fade-in';
-import ScrollAnimation from 'react-animate-on-scroll';
+import CheckboxesTags from './Dropdown';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Category = ({setData}) => {
 
@@ -94,6 +94,7 @@ const Category = ({setData}) => {
 
             <div className="category-items">
                 <h4><i className="fa fa-shopping-basket fa-fw"></i> Mahsulotlar kategoriyasi</h4>
+                <CheckboxesTags/>
             </div>
 
             <ul className="category-wrapper">
