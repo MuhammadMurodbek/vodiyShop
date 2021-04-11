@@ -412,15 +412,15 @@ ul{
                 padding: 2px 5px;
             }
             .cost-btn{
-                flex-direction: row;
+                flex-direction: column;
                 margin: 15px 0 2px;
                 padding: 0 10px;
-                h5{
-                    font-size:16px;
+                h6{
+                    font-size:14px;
+                    margin: 10px 0;
                 }
                 button{
                     padding: 10px 30px;
-                    font-weight: bold;
                     outline:none;
                     cursor: pointer;
                     background: rgba(255, 255, 255, 0.45);
@@ -429,7 +429,6 @@ ul{
                     -webkit-backdrop-filter: blur( 55px );
                     border-radius: 15px;
                     border: 1px solid rgba( 255, 255, 255, 0.02 );
-                
                     transition: all ease 0.15s;
                    
                 }
@@ -439,6 +438,9 @@ ul{
             li{
                 width: 100%;
                 display:flex;
+            }
+            .cost-btn{
+                flex-direction: row;
             }
             &-box{
                 height: auto;
@@ -694,7 +696,7 @@ ul{
             display: flex;
             flex-direction: column;
             margin-bottom: 10px;
-            input{
+            .message-text-form{
                 width: 90%;
                 padding: 10px;
                 margin: 10px auto;
@@ -702,6 +704,43 @@ ul{
                 border-radius: 13px;
                 outline:none;
                 color:rgba(0,0,0,0.5);
+                resize: vertical;
+                max-height: 250px !important;
+
+                &::-webkit-scrollbar {
+                    width: 0.5em;
+                  }
+                   
+                  &::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                  }
+                   
+                  &::-webkit-scrollbar-thumb {
+                    background-color: darkgrey;
+                    outline: 1px solid slategrey;
+                    border-radius:20px;
+                    outline:none;
+                    filter:blur(0);
+                    background-image:linear-gradient(45deg, #7ba4b1,#47595e );
+                }
+                &::-webkit-scrollbar {
+                    width: 0.5em;
+                  }
+                   
+                  &::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                  }
+                   
+                  &::-webkit-scrollbar-thumb {
+                    background-color: darkgrey;
+                    outline: 1px solid slategrey;
+                    border-radius:20px;
+                    outline:none;
+                }
+
+
+
+
             }
             button{
                 width: 96%;

@@ -2,9 +2,7 @@ import React,{useState,useEffect,useContext} from 'react'
 import TextTruncate from 'react-text-truncate'; 
 import FadeIn from 'react-fade-in';
 import {StoreContext} from '../Store/StoreG'
-// import SearchIcon from '@material-ui/icons/Search';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-// import SnackBar from 'react-material-snackbar';
 
 function Main({data}) {
 
@@ -58,7 +56,7 @@ function Main({data}) {
           <input 
             type="search" 
             value={inputValue}
-            placeholder="Search..."
+            placeholder="izlash..."
             onChange={(e)=>inputChange(e.target.value)}
           />
         </span>
@@ -96,7 +94,7 @@ function Main({data}) {
                           text={product.description}
                         />
                         <span className="cost-btn">
-                          <h5>${product.price}</h5>
+                          <h6>Narx: ${product.price}</h6>
                           <button 
                             onClick={() => handleChangeCLick(product)}
                           >

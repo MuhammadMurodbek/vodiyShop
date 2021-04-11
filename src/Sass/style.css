@@ -487,19 +487,19 @@ ul {
   padding: 2px 5px;
 }
 .main-items-box .cost-btn {
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 15px 0 2px;
   padding: 0 10px;
 }
-.main-items-box .cost-btn h5 {
-  font-size: 16px;
+.main-items-box .cost-btn h6 {
+  font-size: 14px;
+  margin: 10px 0;
 }
 .main-items-box .cost-btn button {
   padding: 10px 30px;
-  font-weight: bold;
   outline: none;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.45);
@@ -518,6 +518,12 @@ ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .main-items .cost-btn {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   .main-items-box {
     height: auto;
@@ -811,7 +817,7 @@ ul {
           flex-direction: column;
   margin-bottom: 10px;
 }
-.store-shop-form form input {
+.store-shop-form form .message-text-form {
   width: 90%;
   padding: 10px;
   margin: 10px auto;
@@ -819,6 +825,37 @@ ul {
   border-radius: 13px;
   outline: none;
   color: rgba(0, 0, 0, 0.5);
+  resize: vertical;
+  max-height: 250px !important;
+}
+.store-shop-form form .message-text-form::-webkit-scrollbar {
+  width: 0.5em;
+}
+.store-shop-form form .message-text-form::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.store-shop-form form .message-text-form::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 20px;
+  outline: none;
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  background-image: linear-gradient(45deg, #7ba4b1, #47595e);
+}
+.store-shop-form form .message-text-form::-webkit-scrollbar {
+  width: 0.5em;
+}
+.store-shop-form form .message-text-form::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.store-shop-form form .message-text-form::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 20px;
+  outline: none;
 }
 .store-shop-form form button {
   width: 96%;
