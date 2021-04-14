@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -15,8 +15,10 @@ const Auth = () => {
         resolver: yupResolver(schema),
     });
     const location = useLocation()
+    const history = useHistory()
     useEffect(() => {
         console.log(location)
+        // history.go()
     }, [])
     return (
         <div className="auth-wrapper">
