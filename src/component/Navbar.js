@@ -17,7 +17,7 @@ function Navbar() {
                 <div className="navbar-part">
                     <span className={check ? "navbar-part-info checkNavbarFalse":"navbar-part-info checkNavbarTrue" } >
                             <span className="nav-br-btn">
-                                <a href="/" className="nav-br-btn-link">
+                                <a href="/main" className="nav-br-btn-link">
                                     Vodiy Parfum</a>
                                 <button 
                                     className="nav-btn"
@@ -31,7 +31,7 @@ function Navbar() {
                             </span>
                             
                             <ul className="nav-list">
-                                <li><NavLink to="/">Asosiy</NavLink></li>
+                                <li><NavLink to="/main">Asosiy</NavLink></li>
                                 <li><NavLink to="/about">Biz haqimizda</NavLink></li>
                                 <li><NavLink to="/connect">Aloqa</NavLink></li>
                             </ul>

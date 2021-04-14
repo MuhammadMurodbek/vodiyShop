@@ -10,9 +10,10 @@ function Main({data}) {
     document.title="VodiyParfum | Mahsulotlar"
   },[])
 
-  const {clickChange, setSnackbarCheck} = useContext(StoreContext)
+  const {clickChange, setSnackbarCheck, shopCart} = useContext(StoreContext)
   const [searchInfo, setSearchInfo] = useState([])
   const [inputValue, setInputValue] = useState('')
+  const [productSelect, setProductSelect] = useState({})
  
   ///SELECT OPTION MENU
   const [selectValue, setSelectValue] = useState('')
@@ -43,6 +44,7 @@ function Main({data}) {
   const handleChangeCLick = (product) =>{
     clickChange(product)
     setSnackbarCheck(true)
+    setProductSelect(product)
   }
   return (
     <div className="main">
@@ -95,8 +97,10 @@ function Main({data}) {
                         <span className="cost-btn">
                           <h6 style={{display: "block"}}>Miqdor: {product.miqdor}</h6>
                           <h6>Narx: ${product.price}</h6>
+                
                           <button 
                             onClick={() => handleChangeCLick(product)}
+                            style={shopCart.find(item => item._id === product._id) ? {backgroundColor:"lightGreen"}:{backgroundColor:"transparent"}}
                           >
                             Add
                           </button>
