@@ -4,6 +4,7 @@ import {
   Switch, 
   Route
 } from 'react-router-dom'
+import Auth from './component/Auth'
 import Category from './component/Category'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer';
@@ -45,6 +46,9 @@ const App = () => {
           </Route>
           <Route path="/connect">
             <Connect/>
+          </Route>
+          <Route path="/Auth">
+            <Auth/>
           </Route>
         </Switch>
         <Footer/>

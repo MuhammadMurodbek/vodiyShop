@@ -5,7 +5,6 @@ import FadeIn from 'react-fade-in';
 import ScrollAnimation from 'react-animate-on-scroll';
 import SimpleModal from './Modalbtn';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import TextField from "@material-ui/core/TextField";
 const ShopCart = () => {
 
     useEffect(() => {
@@ -29,8 +28,10 @@ const ShopCart = () => {
     }
     const devCount = (val) => {
         if ([...shopCart].find(item => item._id === val).count > 1) {
+            
             [...shopCart].find(item => item._id === val).count -= 1
             setShopCart([...shopCart])
+        
         }
     }
 
@@ -80,6 +81,7 @@ const ShopCart = () => {
                         <thead>
                             <tr>
                                 <th>Mahsulotlar</th>
+                                <th>Ombor</th>
                                 <th>Miqdor</th>
                                 <th>Narx</th>
                                 <th>Umumiy</th>
@@ -108,16 +110,20 @@ const ShopCart = () => {
                                                             text={item.title}
                                                         />
                                                         <h5>{item.category}</h5>
+                                                        {/* <h6>Miqdor: {item.miqdor}</h6> */}
                                                         <button
                                                             className="btn-style"
                                                             onClick={() => { deleteFunc(item._id) }}
                                                         >
                                                             <i className="fa fa-trash"></i>
                                                         </button>
+
                                                     </span>
+
                                                 </div>
 
                                             </td>
+                                            <td className="product-item-third">{item.miqdor}</td>
                                             <td className="product-item-second">
                                                 <button onClick={() => { devCount(item._id) }}>-</button>
                                                 <span>{item.count}</span>

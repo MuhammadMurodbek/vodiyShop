@@ -19,6 +19,17 @@ button:active {
           transform: scale(1.1);
 }
 
+.input-style {
+  min-width: 100px;
+  border: none;
+  outline: none;
+  padding-left: 30px;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border-bottom: 1.9px solid #fff;
+}
+
 .btn-style {
   margin-top: 20px;
   padding: 7px 16px;
@@ -52,6 +63,7 @@ select:active {
 }
 
 select,
+.auth-form,
 .MuiIconButton-root,
 .navbar,
 .main,
@@ -72,13 +84,14 @@ select,
           box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
   -webkit-backdrop-filter: blur(1.5rem);
           backdrop-filter: blur(1.5rem);
-  border-radius: 20px;
+  border-radius: 18px;
   border: 1.2px solid rgba(255, 255, 255, 0.15);
 }
 
 .category-title,
 .category-wrapper,
 .navlink-text,
+.auth-form,
 .shopcart-empty,
 .info-wrapper h4 {
   display: -webkit-box;
@@ -507,7 +520,7 @@ ul {
           box-shadow: 0 1px 32px 0 rgba(31, 38, 135, 0.1);
   backdrop-filter: blur(55px);
   -webkit-backdrop-filter: blur(55px);
-  border-radius: 15px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.02);
   -webkit-transition: all ease 0.15s;
   transition: all ease 0.15s;
@@ -741,6 +754,7 @@ ul {
 }
 .category-wrapper li .cat-box-wrapper .navlink-text {
   padding: 10px;
+  border-radius: 10px;
   height: auto;
   -webkit-transition: all ease 0.4s;
   transition: all ease 0.4s;
@@ -864,6 +878,14 @@ ul {
 .store-shop-form form button i {
   margin-right: 10px;
   color: rgba(0, 0, 0, 0.5);
+}
+@media only screen and (max-width: 345px) {
+  .store-shop-form {
+    width: 98% !important;
+  }
+  .store-shop-form .message-text-form {
+    width: 70%;
+  }
 }
 .store-shop-cart {
   -webkit-box-flex: 3;

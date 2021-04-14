@@ -17,7 +17,7 @@
     background:linear-gradient( to bottom, rgba(255,255,255,0.3),rgba(255,255,255,0.1));
     box-shadow: 0 1px 32px 0 rgba(49, 51, 77, 0.3);
     backdrop-filter: blur(1.5rem );
-    border-radius: 20px;
+    border-radius: 18px;
     border: 1.2px solid rgba( 255, 255, 255, 0.15 );
 }
 *{
@@ -34,6 +34,16 @@ button{
     &:active{
         transform:scale(1.1);
     }
+}
+.input-style{
+    min-width: 100px;  
+    border:none;
+    outline:none;
+    padding-left: 30px;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    border-bottom: 1.9px solid #fff;
 }
 .btn-style{
     margin-top: 20px;
@@ -66,6 +76,7 @@ select{
 
 //CLASSES USE GLASS EFFECT
 select,
+.auth-form,
 .MuiIconButton-root,
 .navbar,
 .main,
@@ -87,6 +98,7 @@ select,
 .category-title,
 .category-wrapper,
 .navlink-text,
+.auth-form,
 .shopcart-empty,
 .info-wrapper h4{
     @include d-ss;
@@ -427,7 +439,7 @@ ul{
                     box-shadow: 0 1px 32px 0 rgba( 31, 38, 135, 0.1 );
                     backdrop-filter: blur( 55px );
                     -webkit-backdrop-filter: blur( 55px );
-                    border-radius: 15px;
+                    border-radius: 10px;
                     border: 1px solid rgba( 255, 255, 255, 0.02 );
                     transition: all ease 0.15s;
                    
@@ -627,6 +639,7 @@ ul{
                 .navlink-text{
                     padding: 10px;
                     // @include glass;
+                    border-radius:10px;
                     height: auto;
                     transition: all ease 0.4s;
                     &:hover{
@@ -696,6 +709,7 @@ ul{
             display: flex;
             flex-direction: column;
             margin-bottom: 10px;
+
             .message-text-form{
                 width: 90%;
                 padding: 10px;
@@ -737,10 +751,6 @@ ul{
                     border-radius:20px;
                     outline:none;
                 }
-
-
-
-
             }
             button{
                 width: 96%;
@@ -752,7 +762,14 @@ ul{
             }
         }
 
-
+        @media only screen and (max-width: 345px){
+            &{
+                width: 98% !important;
+            }
+            .message-text-form{
+                width: 70%;
+            }
+        }
     }
     &-cart{
         flex:3;
@@ -948,7 +965,7 @@ ul{
                 h3,button{
                     padding: 5px 8px;
                     font-size:0.75rem !important;
-                } 
+                }
             }
         }
 
@@ -969,6 +986,7 @@ ul{
         }
 
     }
+
 }
 //!product-part
  

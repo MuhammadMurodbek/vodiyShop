@@ -44,7 +44,6 @@ function Main({data}) {
     clickChange(product)
     setSnackbarCheck(true)
   }
-
   return (
     <div className="main">
       <div className="search">
@@ -94,6 +93,7 @@ function Main({data}) {
                           text={product.description}
                         />
                         <span className="cost-btn">
+                          <h6 style={{display: "block"}}>Miqdor: {product.miqdor}</h6>
                           <h6>Narx: ${product.price}</h6>
                           <button 
                             onClick={() => handleChangeCLick(product)}
