@@ -1,8 +1,8 @@
-import React,{useState, useEffect} from 'react' 
+import React,{useState, useEffect, useContext} from 'react' 
 import {
   BrowserRouter as Router, 
   Switch, 
-  Route
+  Route,
 } from 'react-router-dom'
 import Auth from './component/Auth'
 import Category from './component/Category'
@@ -16,7 +16,7 @@ import Connect from './component/Connect';
 import CustomizedSnackbars from './component/Snackbar'
 
 const App = () => {
-  
+
   const intialState = JSON.parse(localStorage.getItem('newApp')) || []
   const [data, setData] = useState(intialState)
   useEffect(() =>{
@@ -26,6 +26,8 @@ const App = () => {
   useEffect(() =>{
     document.title="VodiyParfum"
   },[])
+
+  
   return (
     <>
     <StoreG>
@@ -33,6 +35,9 @@ const App = () => {
         <Navbar/>
         <Switch>
           <Route path="/" exact>
+            <Auth/>
+          </Route>
+          <Route path="/main">
             <Category setData={setData} />
           </Route>
           <Route path="/products">
@@ -46,9 +51,6 @@ const App = () => {
           </Route>
           <Route path="/connect">
             <Connect/>
-          </Route>
-          <Route path="/Auth">
-            <Auth/>
           </Route>
         </Switch>
         <Footer/>

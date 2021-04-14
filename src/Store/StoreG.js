@@ -11,6 +11,7 @@ const StoreG = (props) => {
     const [checkItem, setCheckItem] = useState()
     const [dataChecked, setDataChecked] = useState([])
     const [snackbarCheck, setSnackbarCheck] = useState(false)
+    // const [authUrl, setAuthUrl] = useState(false)
     console.log(snackbarCheck)
     const checkCategory = (item) => { setCheckItem(item) }
 
@@ -67,7 +68,7 @@ const StoreG = (props) => {
                     checkSendData,
                     clickChange,
                     setSnackbarCheck,
-                    snackbarCheck
+                    snackbarCheck,
                 }
             }
         >

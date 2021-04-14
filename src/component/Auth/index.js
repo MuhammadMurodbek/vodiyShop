@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useEffect, useContext} from 'react';
+import {useLocation} from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -13,7 +14,10 @@ const Auth = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-
+  const location = useLocation()
+  useEffect(() => {
+    console.log(location)
+  },[])
   return (
       <div className="auth-wrapper">
         <form className="auth-form" onSubmit={handleSubmit((d) => console.log(d))}>

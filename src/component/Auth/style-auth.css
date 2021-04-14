@@ -7,7 +7,8 @@
 .auth-form{
     display:flex;
     flex-direction: column;
-    width: 500px;
+    width: 35%;
+    min-width: 280px;
     height:auto;
     margin: 0 auto;
     padding: 20px;
