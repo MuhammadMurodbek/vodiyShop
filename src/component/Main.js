@@ -13,7 +13,6 @@ function Main({data}) {
   const {clickChange, setSnackbarCheck, shopCart} = useContext(StoreContext)
   const [searchInfo, setSearchInfo] = useState([])
   const [inputValue, setInputValue] = useState('')
-  const [productSelect, setProductSelect] = useState({})
  
   ///SELECT OPTION MENU
   const [selectValue, setSelectValue] = useState('')
@@ -44,13 +43,11 @@ function Main({data}) {
   const handleChangeCLick = (product) =>{
     clickChange(product)
     setSnackbarCheck(true)
-    setProductSelect(product)
   }
   return (
     <div className="main">
       <div className="search">
         <span>
-          {/* <SearchIcon className="search-icon"/> */}
           <div className="search-icon">
             <i className="fa fa-search"></i>
           </div>
