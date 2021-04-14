@@ -42,6 +42,7 @@ function Navbar() {
                                         <li><NavLink to="/main">Asosiy</NavLink></li>
                                         <li><NavLink to="/about">Biz haqimizda</NavLink></li>
                                         <li><NavLink to="/connect">Aloqa</NavLink></li>
+                                        <li><NavLink to="/">Chiqish</NavLink></li>
                                     </ul>
                                     
                             </span>
