@@ -16,22 +16,25 @@ const ShopCart = () => {
     const [loader, setLoader] = useState(false)
     const [productError, setProductError] = useState(false)
     const [collect, setCollect] = useState()
-    const [formData, setFormData] = useState({firstname: ''})
+    const [formData, setFormData] = useState({ firstname: '' })
 
     const deleteFunc = (item) => {
         setShopCart([...shopCart].filter(prev => prev._id !== item))
     }
 
-    const addCount = (val) => {
-        [...shopCart].find(item => item._id === val).count += 1
-        setShopCart([...shopCart])
+    const addCount = (val, miqdor) => {
+        if([...shopCart].find(item => item._id === val).count<miqdor){
+            [...shopCart].find(item => item._id === val).count += 1
+            setShopCart([...shopCart])
+        }
+        console.log(miqdor)
     }
     const devCount = (val) => {
         if ([...shopCart].find(item => item._id === val).count > 1) {
-            
+
             [...shopCart].find(item => item._id === val).count -= 1
             setShopCart([...shopCart])
-        
+
         }
     }
 
@@ -46,10 +49,10 @@ const ShopCart = () => {
         )
 
     }, [shopCart])
-    
-    useEffect(() =>{
-        if(checkSendData === 'SUCCESS') setShopCart([]) 
-    },[checkSendData])
+
+    useEffect(() => {
+        if (checkSendData === 'SUCCESS') setShopCart([])
+    }, [checkSendData])
 
     //WORKING WITH FORM 
     const handleChange = (e) => {
@@ -100,7 +103,7 @@ const ShopCart = () => {
                                         <tr key={index} className="product-item">
                                             <td className="product-item-first">
 
-                                                <div>
+                                                <div className="product-item-first-div">
                                                     <img src={item.image} alt={item.title} />
                                                     <span>
                                                         <TextTruncate
@@ -110,7 +113,6 @@ const ShopCart = () => {
                                                             text={item.title}
                                                         />
                                                         <h5>{item.category}</h5>
-                                                        {/* <h6>Miqdor: {item.miqdor}</h6> */}
                                                         <button
                                                             className="btn-style"
                                                             onClick={() => { deleteFunc(item._id) }}
@@ -127,7 +129,7 @@ const ShopCart = () => {
                                             <td className="product-item-second">
                                                 <button onClick={() => { devCount(item._id) }}>-</button>
                                                 <span>{item.count}</span>
-                                                <button onClick={() => { addCount(item._id) }}>+</button>
+                                                <button onClick={() => { addCount(item._id, item.miqdor) }}>+</button>
                                             </td>
                                             <td className="product-item-third">${item.price}</td>
                                             <td className="product-item-fourth">${item.price * item.count}</td>
@@ -185,14 +187,14 @@ const ShopCart = () => {
                                 </button>
                             ) : checkSendData === 'SUCCESS' ? (
                                 <p className="btn-style"
-                                    style={{ color: 'darkgreen', cursor: 'text'}}
+                                    style={{ color: 'darkgreen', cursor: 'text' }}
                                 >
                                     <i className="fa fa-check" style={{ color: 'darkgreen' }}></i>
                                     Buyurtmangiz jo'natildi
                                 </p>
                             ) : (
                                 <p className="btn-style"
-                                    style={{ color: 'darkred', cursor:'text'}}
+                                    style={{ color: 'darkred', cursor: 'text' }}
                                 >
                                     <i className="fa fa-exclamation" style={{ color: 'darkred' }}></i>
                                     Buyurtmangiz jo'natilmadi
@@ -210,7 +212,7 @@ const ShopCart = () => {
                         ) : null
                 }
                 <div>
-                    <hr />
+                    <hr/>
                 </div>
             </div>
         </div>

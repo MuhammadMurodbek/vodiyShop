@@ -18,8 +18,12 @@ const Auth = () => {
     const history = useHistory()
     useEffect(() => {
         console.log(location)
-        // history.go()
     }, [])
+
+    const handleSubmitClick = () => {
+        history.push('/main');
+        history.go();
+    }
     return (
         <div className="auth-wrapper">
             <form className="auth-form" onSubmit={handleSubmit((d) => console.log(d))}>
@@ -36,11 +40,17 @@ const Auth = () => {
                     className="input-style"
                     name="password"
                     {...register("password")}
-                    placeholder="password"
+                    placeholder="parol"
                 />
                 {/* <p>{errors.password.message}</p> */}
 
-                <button type="submit" className="btn-style">Kirish</button>
+                <button 
+                    type="submit" 
+                    className="btn-style"
+                    onClick={handleSubmitClick}
+                >
+                    Kirish
+                </button>
             </form>
         </div>
     );

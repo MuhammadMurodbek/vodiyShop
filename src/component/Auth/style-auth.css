@@ -9,7 +9,7 @@
 .auth-form{
     display:flex;
     flex-direction: column;
-    width: 35%;
+    width: 400px;
     min-width: 280px;
     height:auto;
     margin: 0 auto;
@@ -25,4 +25,12 @@
 }
 .auth-form input::placeholder{
     color:#ccc;
+}
+@media only screen and (max-width: 366px){
+    .auth-wrapper{
+        padding: 0;
+    }
+    .auth-form{
+        min-width: 240px;
+    }
 }
