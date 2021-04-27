@@ -17,27 +17,35 @@ const ShopCart = () => {
     const [productError, setProductError] = useState(false)
     const [collect, setCollect] = useState()
     const [formData, setFormData] = useState({ firstname: '' })
-
+    const [errorCount, setErrorCount] = useState({check:false, valueID:0})
     const deleteFunc = (item) => {
         setShopCart([...shopCart].filter(prev => prev._id !== item))
     }
 
-    const addCount = (val, miqdor) => {
-        if([...shopCart].find(item => item._id === val).count<miqdor){
-            [...shopCart].find(item => item._id === val).count += 1
-            setShopCart([...shopCart])
+    // const addCount = (val, miqdor) => {
+    //     if([...shopCart].find(item => item._id === val).count<miqdor){
+    //         [...shopCart].find(item => item._id === val).count += 1
+    //         setShopCart([...shopCart])
+    //     }
+    //     console.log(miqdor)
+    // }
+    const devCount = (val_id, count, miqdor) => {
+ 
+        if (parseInt([...shopCart].find(item => item._id === val_id).count) < 1
+            || parseInt([...shopCart].find(item => item._id === val_id).count) > miqdor) {
+           
+            setErrorCount({check:true, valueID:val_id}); 
+                      
+        }else{
+            setErrorCount({check:false, valueID:val_id});
         }
-        console.log(miqdor)
+        
+        
+        [...shopCart].find(item => item._id === val_id).count = count
+        setShopCart([...shopCart])
+        console.log(count)
     }
-    const devCount = (val) => {
-        if ([...shopCart].find(item => item._id === val).count > 1) {
-
-            [...shopCart].find(item => item._id === val).count -= 1
-            setShopCart([...shopCart])
-
-        }
-    }
-
+    
     useEffect(() => {
         shopCart.length ? (
             setCollect(shopCart
@@ -119,17 +127,22 @@ const ShopCart = () => {
                                                         >
                                                             <i className="fa fa-trash"></i>
                                                         </button>
-
                                                     </span>
-
                                                 </div>
 
                                             </td>
                                             <td className="product-item-third">{item.miqdor}</td>
                                             <td className="product-item-second">
-                                                <button onClick={() => { devCount(item._id) }}>-</button>
-                                                <span>{item.count}</span>
-                                                <button onClick={() => { addCount(item._id, item.miqdor) }}>+</button>
+                                                <input
+                                                    type="number"
+                                                    style={ (errorCount.valueID === item._id && errorCount.check) ?  { color: "red" }:{color:"#333"}}
+                                                    className="input-count"
+                                                    onChange={(e) => devCount(item._id, e.target.value, item.miqdor)}
+                                                    value={item.count}
+                                                    min="1"
+                                                    max={`${item.miqdor}`}
+                                                />
+
                                             </td>
                                             <td className="product-item-third">${item.price}</td>
                                             <td className="product-item-fourth">${item.price * item.count}</td>
@@ -212,7 +225,7 @@ const ShopCart = () => {
                         ) : null
                 }
                 <div>
-                    <hr/>
+                    <hr />
                 </div>
             </div>
         </div>

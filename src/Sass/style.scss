@@ -903,9 +903,22 @@ ul{
                             font-weight: bold;
                             cursor:pointer;
                         }
+                        ////////
+                        .input-count{
+                            width: 50px;
+                            padding: 5px;
+                            border-radius:10px;
+                            border:none;
+                        }
+                        ////////
                     }
                     .product-item-fourth{
                         border-radius: 0 20px 20px 0;
+                    }
+                    @media only screen and (max-width: 456px) {
+                        .product-item-second{
+                            justify-content: center;
+                        }
                     }
                     @media only screen and (max-width:380px){
                         .product-item-first-div{

@@ -1,60 +1,80 @@
-import React, { useEffect, useContext } from 'react';
-import { useLocation, useHistory } from 'react-router-dom'
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import './style-auth.css';
-
-const schema = yup.object().shape({
-    user: yup.string().required('Login kiritishda xatolik mavjud').min(4),
-    password: yup.string().required('Login kiritishda xatolik mavjud').min(4),
-});
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom"
+import LockIcon from "@material-ui/icons/Lock";
+import Loader from "react-loader-spinner";
+import "./style-auth.css";
+import axios from "axios";
 
 const Auth = () => {
-    const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema),
-    });
-    const location = useLocation()
+    const [loader, setLoader] = useState(false)
     const history = useHistory()
-    useEffect(() => {
-        console.log(location)
-    }, [])
+    const [user, setUser] = useState({
+        login: "",
+        password: "",
+    });
 
-    const handleSubmitClick = () => {
-        history.push('/main');
-        history.go();
-    }
+    const onChangeInput = (e) => {
+        const { name, value } = e.target;
+        setUser({ ...user, [name]: value });
+    };
+
+    const loginSubmit = (e) => {
+        e.preventDefault()
+        setLoader(true)
+        axios.post('https://jsonplaceholder.typicode.com/posts', { user })
+            .then((res) => {
+                console.log(res)
+                history.push('/main')
+                history.go()
+                setLoader(false)
+            })
+            .catch((error) => {
+                console.error(error)
+                setLoader(false)
+            })
+    };
+
     return (
-        <div className="auth-wrapper">
-            <form className="auth-form" onSubmit={handleSubmit((d) => console.log(d))}>
+        <div className="auth-wrapper" method="post">
+
+            <form className="auth-form" onSubmit={loginSubmit}>
+                <span className="auth-form-icon-wrapper">
+                    <LockIcon color="secondary" fontSize="large" />
+                </span>
                 <h3>Tizimga kirish</h3>
+                {loader ? (<Loader
+                    type="ThreeDots"
+                    color="#00BFFF"
+                    height={30}
+                    width={30}
+                    timeout={3000} //3 secs
+                />) : null}
                 <input
-                    className="input-style"
                     name="login"
-                    {...register("login")}
                     placeholder="login"
-                />
-                {/* <p>{errors.user.message}</p> */}
-
-                <input
                     className="input-style"
-                    name="password"
-                    {...register("password")}
-                    placeholder="parol"
+                    onChange={onChangeInput}
+                    minLength="3"
+                    required
                 />
-                {/* <p>{errors.password.message}</p> */}
-
-                <button 
-                    type="submit" 
+                <input
+                    name="password"
+                    placeholder="parol"
+                    className="input-style"
+                    onChange={onChangeInput}
+                    minLength="3"
+                    required
+                />
+                <button
+                    type="submit"
                     className="btn-style"
-                    onClick={handleSubmitClick}
+                // onClick={handleSubmitClick}
                 >
                     Kirish
-                </button>
+        </button>
             </form>
         </div>
     );
 };
 
 export default Auth;
-

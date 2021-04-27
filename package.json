@@ -23,6 +23,7 @@
     "react-fade-in": "^2.0.1",
     "react-hook-form": "^7.0.7",
     "react-lazy-load-image-component": "^1.5.1",
+    "react-loader-spinner": "^4.0.0",
     "react-material-snackbar": "^3.0.1",
     "react-responsive-carousel": "^3.2.12",
     "react-router-dom": "^5.2.0",

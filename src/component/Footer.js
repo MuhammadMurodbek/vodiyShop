@@ -4,9 +4,9 @@ import FadeIn from 'react-fade-in';
 
 const Footer = () => {
     const location = useLocation()
-    useEffect(() => {
-        console.log(location.pathname)
-    },[])
+    // useEffect(() => {
+    //     console.log(location.pathname)
+    // },[])
     return (
         <>
         {

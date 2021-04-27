@@ -9,28 +9,56 @@
 .auth-form{
     display:flex;
     flex-direction: column;
+    position: relative;
     width: 400px;
     min-width: 280px;
     height:auto;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px 20px;
+    background:linear-gradient( to bottom, rgba(255,255,255,0.2),rgba(255,255,255,0.1)) !important;
+    backdrop-filter: blur(0.6rem );
+    border-radius:15px 50px 15px 50px;
 }
 .auth-form input{
     width: 80%;
-    padding: 0;
+    padding: 5px;
     margin: 15px 0;
+    border-radius:40px;
+    color: #444;
+    background-color:rgba(255,255, 255, 1);
+    opacity: .9;
 }
 .auth-form button{
     width: 50%;
+    font-size: 1.09rem;
+}
+.auth-form p{
+    font-style: italic;
+    font-size: 0.8rem;
+    color:yellow;
+    padding: 0;
+    margin: 0;
+}
+.auth-form-icon-wrapper{
+    position: absolute;
+    top: -35px;
+    padding: 10px 12px;
+    margin: 0;
+    border-radius: 50%;
+    background-color:#a2bccb;
+}
+.auth-form-icon{
+    color: #444 !important; 
 }
 .auth-form input::placeholder{
-    color:#ccc;
+    color:#888;
 }
 @media only screen and (max-width: 366px){
-    .auth-wrapper{
-        padding: 0;
+    .auth-form input{
+        width: 90%;
     }
     .auth-form{
         min-width: 240px;
+        padding: 20px 10px;
     }
 }
