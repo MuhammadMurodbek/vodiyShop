@@ -47,7 +47,7 @@ const Auth = () => {
                     color="#00BFFF"
                     height={30}
                     width={30}
-                    timeout={3000} //3 secs
+                    timeout={4000} //3 secs
                 />) : null}
                 <input
                     name="login"
